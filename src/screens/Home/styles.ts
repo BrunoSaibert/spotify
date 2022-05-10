@@ -1,10 +1,16 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Feather } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const Container = styled.View``;
 
+export const Header = styled(LinearGradient)``;
+
 export const TituloWrapper = styled.View`
+  padding: 0 16px;
+  margin-top: ${RFValue(70)}px;
+
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

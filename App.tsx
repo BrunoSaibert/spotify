@@ -55,8 +55,6 @@ export default function App() {
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: theme.COLORS.DARKER,
-          paddingHorizontal: 16,
-          paddingTop: RFValue(75),
         }}
         onLayout={onLayoutRootView}
       >

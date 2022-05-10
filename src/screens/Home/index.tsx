@@ -1,16 +1,15 @@
 import React from "react";
+import { useTheme } from "styled-components";
 
 import { RecentesLista } from "../../components/RecentesLista";
 
-import {
-  DATA_RECENTES,
-  DATA_PODCAST,
-  DATA_ARTISTAS,
-} from "../../utils/database";
+import { DATA_RECENTES } from "../../utils/database";
 
 import * as S from "./styles";
 
 export function Home() {
+  const theme = useTheme();
+
   const data = new Date();
   const hora = data.getHours();
   let titulo = "";
@@ -25,23 +24,29 @@ export function Home() {
 
   return (
     <S.Container>
-      <S.TituloWrapper>
-        <S.Titulo>{titulo}</S.Titulo>
+      <S.Header
+        colors={[theme.COLORS.PRIMARY, theme.COLORS.DARKER]}
+        start={[0, 0]}
+        end={[0.12, 0.22]}
+      >
+        <S.TituloWrapper>
+          <S.Titulo>{titulo}</S.Titulo>
 
-        <S.BotaoAcaoWrapper>
-          <S.BotaoAcao>
-            <S.BotaoAcaoIcone name="bell" />
-          </S.BotaoAcao>
-          <S.BotaoAcao>
-            <S.BotaoAcaoIcone name="clock" />
-          </S.BotaoAcao>
-          <S.BotaoAcao>
-            <S.BotaoAcaoIcone name="settings" />
-          </S.BotaoAcao>
-        </S.BotaoAcaoWrapper>
-      </S.TituloWrapper>
+          <S.BotaoAcaoWrapper>
+            <S.BotaoAcao>
+              <S.BotaoAcaoIcone name="bell" />
+            </S.BotaoAcao>
+            <S.BotaoAcao>
+              <S.BotaoAcaoIcone name="clock" />
+            </S.BotaoAcao>
+            <S.BotaoAcao>
+              <S.BotaoAcaoIcone name="settings" />
+            </S.BotaoAcao>
+          </S.BotaoAcaoWrapper>
+        </S.TituloWrapper>
 
-      <RecentesLista data={DATA_RECENTES} />
+        <RecentesLista data={DATA_RECENTES} />
+      </S.Header>
     </S.Container>
   );
 }
