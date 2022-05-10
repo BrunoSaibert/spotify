@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { View } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "styled-components";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
@@ -11,8 +12,7 @@ import {
 
 import theme from "./src/styles/theme";
 
-import { Home } from "./src/screens/Home";
-import { RFValue } from "react-native-responsive-fontsize";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -49,17 +49,16 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar style="auto" />
       <View
         style={{
           flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: theme.COLORS.DARKER,
         }}
         onLayout={onLayoutRootView}
       >
-        <StatusBar style="auto" />
-        <Home />
+        <NavigationContainer>
+          <Routes />
+        </NavigationContainer>
       </View>
     </ThemeProvider>
   );

@@ -25,9 +25,9 @@ export function Home() {
   return (
     <S.Container>
       <S.Header
-        colors={[theme.COLORS.PRIMARY, theme.COLORS.DARKER]}
+        colors={[theme.COLORS.PRIMARY, "transparent"]}
         start={[0, 0]}
-        end={[0.12, 0.22]}
+        end={[0.12, 0.6]}
       >
         <S.TituloWrapper>
           <S.Titulo>{titulo}</S.Titulo>
