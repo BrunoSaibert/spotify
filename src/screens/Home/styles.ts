@@ -2,17 +2,9 @@ import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Feather } from "@expo/vector-icons";
 
-export const Container = styled.View`
-  flex: 1;
-
-  background-color: ${({ theme }) => theme.COLORS.DARKER};
-`;
+export const Container = styled.View``;
 
 export const TituloWrapper = styled.View`
-  width: 100%;
-  padding: 0 16px;
-  margin-top: ${RFValue(70)}px;
-
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
