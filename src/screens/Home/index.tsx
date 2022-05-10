@@ -2,8 +2,13 @@ import React from "react";
 import { useTheme } from "styled-components";
 
 import { RecentesLista } from "../../components/RecentesLista";
+import { Slider } from "../../components/Slider";
 
-import { DATA_RECENTES } from "../../utils/database";
+import {
+  DATA_ARTISTAS,
+  DATA_PODCAST,
+  DATA_RECENTES,
+} from "../../utils/database";
 
 import * as S from "./styles";
 
@@ -23,7 +28,7 @@ export function Home() {
   }
 
   return (
-    <S.Container>
+    <S.Container showsVerticalScrollIndicator={false}>
       <S.Header
         colors={[theme.COLORS.PRIMARY, "transparent"]}
         start={[0, 0]}
@@ -47,6 +52,11 @@ export function Home() {
 
         <RecentesLista data={DATA_RECENTES} />
       </S.Header>
+
+      <Slider title="Seus programas" data={DATA_PODCAST} />
+      <Slider title="Tocadas recentemente" data={DATA_RECENTES} size="small" />
+      <Slider title="Principais artistas" data={DATA_ARTISTAS} />
+      <Slider title="100% você" data={DATA_RECENTES} />
     </S.Container>
   );
 }
