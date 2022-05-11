@@ -4,6 +4,7 @@ import { useTheme } from "styled-components";
 
 import { Home } from "../screens/Home";
 import { Buscar } from "../screens/Buscar";
+import { Biblioteca } from "../screens/Biblioteca";
 
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +47,7 @@ export function Routes() {
       />
       <Tab.Screen
         name="Sua Biblioteca"
-        component={Home}
+        component={Biblioteca}
         options={{
           tabBarIcon: ({ size, color }) => (
             <Feather name="bar-chart-2" size={size} color={color} />
