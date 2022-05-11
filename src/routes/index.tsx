@@ -3,6 +3,7 @@ import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 
 import { Home } from "../screens/Home";
+import { Buscar } from "../screens/Buscar";
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +37,7 @@ export function Routes() {
       />
       <Tab.Screen
         name="Buscar"
-        component={Home}
+        component={Buscar}
         options={{
           tabBarIcon: ({ size, color }) => (
             <Feather name="search" size={size} color={color} />

@@ -56,7 +56,13 @@ export default function App() {
         }}
         onLayout={onLayoutRootView}
       >
-        <NavigationContainer>
+        <NavigationContainer
+          theme={{
+            colors: {
+              background: theme.COLORS.DARKER,
+            },
+          }}
+        >
           <Routes />
         </NavigationContainer>
       </View>
