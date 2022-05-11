@@ -1,6 +1,7 @@
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
+import { RFValue } from "react-native-responsive-fontsize";
 
 import { SliderBusca } from "../../components/SliderBusca";
 
@@ -17,7 +18,7 @@ export function Buscar() {
 
       <S.SearchInputWrapper>
         <S.SearchInput>
-          <Feather name="search" size={24} color={theme.COLORS.DARK} />
+          <S.InputIcone name="search" />
           <S.Input
             placeholder="Artistas, músicas ou podcasts"
             placeholderTextColor={theme.COLORS.DARK}

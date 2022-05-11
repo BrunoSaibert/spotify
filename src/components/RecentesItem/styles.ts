@@ -7,25 +7,25 @@ export const Container = styled(TouchableOpacity)`
   align-items: center;
 
   width: 49%;
-  height: 56px;
+  height: ${RFValue(56)}px;
 
-  margin-bottom: 8px;
+  margin-bottom: ${RFValue(8)}px;
 
   background-color: ${({ theme }) => theme.COLORS.DARK};
-  border-radius: 4px;
+  border-radius: ${RFValue(4)}px;
 
   overflow: hidden;
 `;
 
 export const Imagem = styled(Image)`
-  width: 56px;
-  height: 56px;
+  width: ${RFValue(56)}px;
+  height: ${RFValue(56)}px;
 
   background-color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;
 
 export const Titulo = styled.Text`
-  padding: 8px;
+  padding: ${RFValue(8)}px;
 
   align-items: center;
   justify-content: center;

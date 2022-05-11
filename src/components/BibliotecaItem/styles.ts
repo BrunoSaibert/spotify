@@ -4,7 +4,7 @@ import { Image } from "react-native";
 
 export const Container = styled.View`
   height: ${RFValue(64)}px;
-  margin: 8px 0;
+  margin: ${RFValue(8)}px 0;
 
   flex-direction: row;
   align-items: center;
@@ -18,7 +18,7 @@ export const Imagem = styled(Image)<{ round: number }>`
 
   background-color: ${({ theme }) => theme.COLORS.LIGHTER};
 
-  margin-right: 16px;
+  margin-right: ${RFValue(16)}px;
 `;
 
 export const Title = styled.Text`

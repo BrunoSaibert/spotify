@@ -25,7 +25,7 @@ export const Title = styled.Text<{ align: string }>`
 
   letter-spacing: -0.3px;
 
-  margin-top: 8px;
+  margin-top: ${RFValue(8)}px;
 `;
 
 export const Description = styled.Text<{ align: string }>`
@@ -38,5 +38,5 @@ export const Description = styled.Text<{ align: string }>`
 
   letter-spacing: -0.3px;
 
-  margin: 4px 0;
+  margin: ${RFValue(4)}px 0;
 `;

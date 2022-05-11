@@ -8,7 +8,7 @@ export const Container = styled.ScrollView``;
 export const Header = styled(LinearGradient)``;
 
 export const TituloWrapper = styled.View`
-  padding: 0 16px;
+  padding: 0 ${RFValue(16)}px;
   margin-top: ${RFValue(70)}px;
 
   flex-direction: row;
@@ -29,7 +29,7 @@ export const BotaoAcaoWrapper = styled.View`
 `;
 
 export const BotaoAcao = styled.TouchableOpacity`
-  margin-left: 24px;
+  margin-left: ${RFValue(24)}px;
 `;
 
 export const BotaoAcaoIcone = styled(Feather)`

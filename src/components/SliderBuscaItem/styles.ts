@@ -3,16 +3,16 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View<{ bgColor: string }>`
   width: 48%;
-  height: 88px;
+  height: ${RFValue(88)}px;
 
   background-color: ${({ bgColor }) => bgColor};
 
-  border-radius: 4px;
+  border-radius: ${RFValue(4)}px;
 
   overflow: hidden;
 
-  padding: 16px 10px;
-  margin-top: 16px;
+  padding: ${RFValue(16)}px ${RFValue(10)}px;
+  margin-top: ${RFValue(16)}px;
 
   position: relative;
 `;
@@ -29,8 +29,8 @@ export const Title = styled.Text`
 `;
 
 export const Image = styled.Image`
-  width: 68px;
-  height: 68px;
+  width: ${RFValue(68)}px;
+  height: ${RFValue(68)}px;
 
   position: absolute;
   right: -16px;

@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
-  margin: 20px 0;
+  margin: ${RFValue(20)}px 0;
 `;
 
 export const Title = styled.Text`
@@ -14,10 +14,10 @@ export const Title = styled.Text`
 
   letter-spacing: -0.3px;
 
-  margin-left: 16px;
-  margin-bottom: 16px;
+  margin-left: ${RFValue(16)}px;
+  margin-bottom: ${RFValue(16)}px;
 `;
 
 export const Slider = styled(FlatList)`
-  padding-left: 16px;
+  padding-left: ${RFValue(16)}px;
 `;

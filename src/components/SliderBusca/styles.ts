@@ -3,7 +3,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { FlatList } from "react-native";
 
 export const Container = styled.View`
-  padding: 8px 0 16px;
+  padding: ${RFValue(8)}px 0 ${RFValue(16)}px;
 `;
 
 export const Title = styled.Text`
