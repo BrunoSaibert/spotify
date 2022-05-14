@@ -36,7 +36,7 @@
   <a href="#--licença">Licença</a>
 </p>
 
-![](https://raw.githubusercontent.com/BrunoSaibert/spotify/main/assets/cover.jpg)
+![](https://raw.githubusercontent.com/BrunoSaibert/spotify/main/assets/new-cover.jpg)
 
 ## [](https://github.com/BrunoSaibert/spotify#--sobre-o-projeto) 💻 Sobre o projeto
 
