@@ -90,7 +90,7 @@ $ expo start
 
 ## [](https://github.com/BrunoSaibert/spotify#--layout) 🔖 Layout
 
-Por hora o layout está em desenvolvimento. É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/G9xLdblr799PBFFa6DWDwf/Spotify-Clone?node-id=2%3A3). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
 
 ---
 
