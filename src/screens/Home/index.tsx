@@ -28,7 +28,10 @@ export function Home() {
   }
 
   return (
-    <S.Container showsVerticalScrollIndicator={false}>
+    <S.Container
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingBottom: 80 }}
+    >
       <S.Header
         colors={[theme.COLORS.PRIMARY, "transparent"]}
         start={[0, 0]}

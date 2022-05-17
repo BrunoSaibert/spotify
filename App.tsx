@@ -13,6 +13,7 @@ import {
 import theme from "./src/styles/theme";
 
 import { Routes } from "./src/routes";
+import { Player } from "./src/components/Player";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -49,7 +50,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <View
         style={{
           flex: 1,
@@ -63,7 +64,9 @@ export default function App() {
             },
           }}
         >
-          <Routes />
+          <Player>
+            <Routes />
+          </Player>
         </NavigationContainer>
       </View>
     </ThemeProvider>

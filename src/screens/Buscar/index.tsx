@@ -13,7 +13,11 @@ export function Buscar() {
   const theme = useTheme();
 
   return (
-    <S.Container stickyHeaderIndices={[1]} showsVerticalScrollIndicator={false}>
+    <S.Container
+      stickyHeaderIndices={[1]}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingBottom: 80 }}
+    >
       <S.Title>Buscar</S.Title>
 
       <S.SearchInputWrapper>

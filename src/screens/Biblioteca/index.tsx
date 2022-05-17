@@ -13,7 +13,11 @@ import * as S from "./styles";
 
 export function Biblioteca() {
   return (
-    <S.Container stickyHeaderIndices={[0]} showsVerticalScrollIndicator={false}>
+    <S.Container
+      stickyHeaderIndices={[0]}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingBottom: 80 }}
+    >
       <S.TituloWrapper>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <S.Imagem source={perfilImage} />
