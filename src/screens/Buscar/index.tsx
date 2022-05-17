@@ -1,10 +1,7 @@
 import React from "react";
-import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
-import { RFValue } from "react-native-responsive-fontsize";
 
 import { SliderBusca } from "../../components/SliderBusca";
-
 import { DATA_ARTISTAS, DATA_PODCAST } from "../../utils/database";
 
 import * as S from "./styles";

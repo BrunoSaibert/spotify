@@ -1,8 +1,8 @@
 import React, { ReactNode, useState } from "react";
 import { Pressable, Text, View, Modal } from "react-native";
-import { useTheme } from "styled-components";
 
 import image from "../../assets/images/tame_impala.jpg";
+import { ButtonIcon } from "../ButtonIcon";
 
 import * as S from "./styles";
 
@@ -13,13 +13,11 @@ type Props = {
 export function Player({ children }: Props) {
   const [modalVisible, setModalVisible] = useState(false);
 
-  const theme = useTheme();
-
   return (
     <>
       {children}
       <S.Container
-        colors={["transparent", theme.COLORS.DARKER]}
+        colors={["transparent", "#222222dd"]}
         start={[0, 0]}
         end={[0, 1]}
       >
@@ -36,15 +34,9 @@ export function Player({ children }: Props) {
             </Pressable>
 
             <S.Wrapper>
-              <S.BotaoAcao>
-                <S.BotaoAcaoIcone name="speaker" />
-              </S.BotaoAcao>
-              <S.BotaoAcao>
-                <S.BotaoAcaoIcone name="heart" />
-              </S.BotaoAcao>
-              <S.BotaoAcao>
-                <S.BotaoAcaoIcone name="play" color="LIGHTER" />
-              </S.BotaoAcao>
+              <ButtonIcon name="speaker" />
+              <ButtonIcon name="heart" />
+              <ButtonIcon name="play" color="LIGHTER" />
             </S.Wrapper>
           </S.Player>
 

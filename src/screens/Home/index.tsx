@@ -1,9 +1,11 @@
 import React from "react";
+import { ScrollView } from "react-native";
 import { useTheme } from "styled-components";
+import { LinearGradient } from "expo-linear-gradient";
 
+import { ButtonIcon } from "../../components/ButtonIcon";
 import { RecentesLista } from "../../components/RecentesLista";
 import { Slider } from "../../components/Slider";
-
 import {
   DATA_ARTISTAS,
   DATA_PODCAST,
@@ -15,51 +17,45 @@ import * as S from "./styles";
 export function Home() {
   const theme = useTheme();
 
-  const data = new Date();
-  const hora = data.getHours();
-  let titulo = "";
+  const date = new Date();
+  const hour = date.getHours();
+  let title = "";
 
-  if (hora > 6 && hora < 12) {
-    titulo = "Bom dia";
-  } else if (hora < 18) {
-    titulo = "Boa tarde";
+  if (hour > 6 && hour < 12) {
+    title = "Bom dia";
+  } else if (hour < 18) {
+    title = "Boa tarde";
   } else {
-    titulo = "Boa noite";
+    title = "Boa noite";
   }
 
   return (
-    <S.Container
+    <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingBottom: 80 }}
     >
-      <S.Header
+      <LinearGradient
         colors={[theme.COLORS.PRIMARY, "transparent"]}
         start={[0, 0]}
         end={[0.12, 0.6]}
       >
-        <S.TituloWrapper>
-          <S.Titulo>{titulo}</S.Titulo>
+        <S.TitleWrapper>
+          <S.Title>{title}</S.Title>
 
-          <S.BotaoAcaoWrapper>
-            <S.BotaoAcao>
-              <S.BotaoAcaoIcone name="bell" />
-            </S.BotaoAcao>
-            <S.BotaoAcao>
-              <S.BotaoAcaoIcone name="clock" />
-            </S.BotaoAcao>
-            <S.BotaoAcao>
-              <S.BotaoAcaoIcone name="settings" />
-            </S.BotaoAcao>
-          </S.BotaoAcaoWrapper>
-        </S.TituloWrapper>
+          <S.ButtonWrapper>
+            <ButtonIcon name="bell" />
+            <ButtonIcon name="clock" />
+            <ButtonIcon name="settings" />
+          </S.ButtonWrapper>
+        </S.TitleWrapper>
 
         <RecentesLista data={DATA_RECENTES} />
-      </S.Header>
+      </LinearGradient>
 
       <Slider title="Seus programas" data={DATA_PODCAST} />
       <Slider title="Tocadas recentemente" data={DATA_RECENTES} size="small" />
       <Slider title="Principais artistas" data={DATA_ARTISTAS} />
       <Slider title="100% você" data={DATA_RECENTES} />
-    </S.Container>
+    </ScrollView>
   );
 }

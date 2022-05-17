@@ -1,8 +1,6 @@
 import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
-import { Feather } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
-import theme from "../../styles/theme";
 
 export const Container = styled(LinearGradient)`
   width: 100%;
@@ -55,18 +53,6 @@ export const SubTitle = styled.Text`
 
 export const Wrapper = styled.View`
   flex-direction: row;
-`;
-
-export const BotaoAcao = styled.TouchableOpacity`
-  margin: 0 8px;
-`;
-
-export const BotaoAcaoIcone = styled(Feather)<{
-  color?: keyof typeof theme.COLORS;
-}>`
-  color: ${({ theme, color }) =>
-    color ? theme.COLORS[color] : theme.COLORS.GREY};
-  font-size: ${RFValue(22)}px;
 `;
 
 export const PercentBar = styled.ScrollView`
