@@ -8,8 +8,9 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const Icon = styled(Feather)<{
+  size: number;
   color: keyof typeof theme.COLORS;
 }>`
   color: ${({ theme, color }) => theme.COLORS[color]};
-  font-size: ${RFValue(22)}px;
+  font-size: ${({ size }) => RFValue(size ?? 22)}px;
 `;
