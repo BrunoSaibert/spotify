@@ -28,7 +28,7 @@ export const Player = styled.View`
   background-color: ${({ theme }) => theme.COLORS.DARK};
 `;
 
-export const Imagem = styled.Image`
+export const Image = styled.Image`
   width: 42px;
   height: 42px;
 
@@ -55,7 +55,7 @@ export const Wrapper = styled.View`
   flex-direction: row;
 `;
 
-export const PercentBar = styled.ScrollView`
+export const Percent = styled.ScrollView`
   background: ${({ theme }) => theme.COLORS.GREY};
   width: 94%;
   height: 2px;
@@ -63,7 +63,7 @@ export const PercentBar = styled.ScrollView`
   margin: -2px auto 0;
 `;
 
-export const Percent = styled.ScrollView`
+export const PercentBar = styled.ScrollView`
   background: ${({ theme }) => theme.COLORS.LIGHTER};
   width: 30%;
   height: 2px;

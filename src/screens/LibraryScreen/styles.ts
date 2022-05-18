@@ -1,12 +1,11 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { Feather } from "@expo/vector-icons";
 
 export const Container = styled.ScrollView`
   padding: 0 ${RFValue(16)}px;
 `;
 
-export const TituloWrapper = styled.View`
+export const TitleWrapper = styled.View`
   padding: ${RFValue(70)}px 0 ${RFValue(8)}px;
   background-color: ${({ theme }) => theme.COLORS.DARKER};
 
@@ -15,7 +14,7 @@ export const TituloWrapper = styled.View`
   justify-content: space-between;
 `;
 
-export const Imagem = styled.Image`
+export const Image = styled.Image`
   width: ${RFValue(32)}px;
   height: ${RFValue(32)}px;
 
@@ -26,7 +25,7 @@ export const Imagem = styled.Image`
   margin-right: ${RFValue(8)}px;
 `;
 
-export const Titulo = styled.Text`
+export const Title = styled.Text`
   font-size: ${RFValue(22)}px;
   line-height: ${RFValue(22 * 1.2)}px;
   letter-spacing: -0.3px;
@@ -34,15 +33,6 @@ export const Titulo = styled.Text`
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;
 
-export const BotaoAcaoWrapper = styled.View`
+export const ButtonWrapper = styled.View`
   flex-direction: row;
-`;
-
-export const BotaoAcao = styled.TouchableOpacity`
-  margin-left: ${RFValue(24)}px;
-`;
-
-export const BotaoAcaoIcone = styled(Feather)`
-  color: ${({ theme }) => theme.COLORS.LIGHTER};
-  font-size: ${RFValue(22)}px;
 `;

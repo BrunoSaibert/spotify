@@ -37,6 +37,4 @@ export const Image = styled.Image`
   bottom: -6px;
 
   transform: rotate(30deg);
-
-  elevation: 3;
 `;

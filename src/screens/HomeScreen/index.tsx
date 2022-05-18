@@ -14,7 +14,7 @@ import {
 
 import * as S from "./styles";
 
-export function Home() {
+export function HomeScreen() {
   const theme = useTheme();
 
   const date = new Date();
@@ -43,9 +43,9 @@ export function Home() {
           <S.Title>{title}</S.Title>
 
           <S.ButtonWrapper>
-            <ButtonIcon name="bell" />
-            <ButtonIcon name="clock" />
-            <ButtonIcon name="settings" />
+            <ButtonIcon name="bell" color="LIGHTER" />
+            <ButtonIcon name="clock" color="LIGHTER" />
+            <ButtonIcon name="settings" color="LIGHTER" />
           </S.ButtonWrapper>
         </S.TitleWrapper>
 

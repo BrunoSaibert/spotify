@@ -43,7 +43,7 @@ export const Input = styled.TextInput`
   color: ${({ theme }) => theme.COLORS.DARK};
 `;
 
-export const InputIcone = styled(Feather)`
+export const InputIcon = styled(Feather)`
   color: ${({ theme }) => theme.COLORS.DARK};
   font-size: ${RFValue(24)}px;
 `;

@@ -6,7 +6,7 @@ import { DATA_ARTISTAS, DATA_PODCAST } from "../../utils/database";
 
 import * as S from "./styles";
 
-export function Buscar() {
+export function SearchScreen() {
   const theme = useTheme();
 
   return (
@@ -19,7 +19,7 @@ export function Buscar() {
 
       <S.SearchInputWrapper>
         <S.SearchInput>
-          <S.InputIcone name="search" />
+          <S.InputIcon name="search" />
           <S.Input
             placeholder="Artistas, músicas ou podcasts"
             placeholderTextColor={theme.COLORS.DARK}

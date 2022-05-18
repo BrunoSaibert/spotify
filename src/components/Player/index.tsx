@@ -1,13 +1,13 @@
 import React, { ReactNode, useState } from "react";
-import { Pressable, Text, View, Modal, Image, Dimensions } from "react-native";
+import { Pressable, Text, View, Modal, Image } from "react-native";
 import { useTheme } from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
+import { RFValue } from "react-native-responsive-fontsize";
 
 import image from "../../assets/images/portugal_the_man.jpg";
 import { ButtonIcon } from "../ButtonIcon";
 
 import * as S from "./styles";
-import { RFValue } from "react-native-responsive-fontsize";
 
 type Props = {
   children: ReactNode;
@@ -16,7 +16,6 @@ type Props = {
 export function Player({ children }: Props) {
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { width } = Dimensions.get("window");
   const theme = useTheme();
 
   return (
@@ -31,7 +30,7 @@ export function Player({ children }: Props) {
           <S.Player>
             <Pressable onPress={() => setModalVisible(true)}>
               <S.Wrapper>
-                <S.Imagem source={image} />
+                <S.Image source={image} />
                 <View style={{ justifyContent: "center" }}>
                   <S.Title>Desire Be Desire Go</S.Title>
                   <S.SubTitle>Tame Impala</S.SubTitle>
@@ -46,9 +45,9 @@ export function Player({ children }: Props) {
             </S.Wrapper>
           </S.Player>
 
-          <S.PercentBar>
-            <S.Percent />
-          </S.PercentBar>
+          <S.Percent>
+            <S.PercentBar />
+          </S.Percent>
         </View>
       </S.Container>
 
@@ -74,6 +73,7 @@ export function Player({ children }: Props) {
               name="chevron-down"
               onPress={() => setModalVisible(false)}
               size={28}
+              color="LIGHTER"
             />
             <View
               style={{
@@ -95,7 +95,7 @@ export function Player({ children }: Props) {
                 Músicas Curtidas
               </Text>
             </View>
-            <ButtonIcon name="more-vertical" />
+            <ButtonIcon name="more-vertical" color="LIGHTER" />
           </View>
 
           <View
@@ -151,7 +151,7 @@ export function Player({ children }: Props) {
                 </Text>
               </View>
 
-              <ButtonIcon name="heart" />
+              <ButtonIcon name="heart" color="LIGHTER" />
             </View>
 
             <View
@@ -162,9 +162,9 @@ export function Player({ children }: Props) {
                 paddingTop: 20,
               }}
             >
-              <S.PercentBar>
-                <S.Percent />
-              </S.PercentBar>
+              <S.Percent>
+                <S.PercentBar />
+              </S.Percent>
             </View>
 
             <View
@@ -200,10 +200,10 @@ export function Player({ children }: Props) {
                 justifyContent: "space-between",
               }}
             >
-              <ButtonIcon name="shuffle" size={24} />
-              <ButtonIcon name="skip-back" size={24} />
+              <ButtonIcon name="shuffle" size={24} color="LIGHTER" />
+              <ButtonIcon name="skip-back" size={24} color="LIGHTER" />
               <ButtonIcon
-                name="pause"
+                name="play"
                 color="DARKER"
                 size={32}
                 style={{
@@ -215,8 +215,8 @@ export function Player({ children }: Props) {
                   justifyContent: "center",
                 }}
               />
-              <ButtonIcon name="skip-forward" size={24} />
-              <ButtonIcon name="repeat" size={24} />
+              <ButtonIcon name="skip-forward" size={24} color="LIGHTER" />
+              <ButtonIcon name="repeat" size={24} color="LIGHTER" />
             </View>
 
             <View
@@ -227,15 +227,15 @@ export function Player({ children }: Props) {
                 paddingTop: 20,
               }}
             >
-              <ButtonIcon name="speaker" size={16} />
+              <ButtonIcon name="speaker" size={16} color="LIGHTER" />
               <View
                 style={{
                   flexDirection: "row",
                   alignItems: "center",
                 }}
               >
-                <ButtonIcon name="share-2" size={16} />
-                <ButtonIcon name="menu" size={16} />
+                <ButtonIcon name="share-2" size={16} color="LIGHTER" />
+                <ButtonIcon name="menu" size={16} color="LIGHTER" />
               </View>
             </View>
           </View>

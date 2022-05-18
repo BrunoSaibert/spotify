@@ -2,9 +2,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 
-import { Home } from "../screens/Home";
-import { Buscar } from "../screens/Buscar";
-import { Biblioteca } from "../screens/Biblioteca";
+import { HomeScreen } from "../screens/HomeScreen";
+import { SearchScreen } from "../screens/SearchScreen";
+import { LibraryScreen } from "../screens/LibraryScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,7 +29,7 @@ export function Routes() {
     >
       <Tab.Screen
         name="Início"
-        component={Home}
+        component={HomeScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
             <Feather name="home" size={size} color={color} />
@@ -38,7 +38,7 @@ export function Routes() {
       />
       <Tab.Screen
         name="Buscar"
-        component={Buscar}
+        component={SearchScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
             <Feather name="search" size={size} color={color} />
@@ -47,7 +47,7 @@ export function Routes() {
       />
       <Tab.Screen
         name="Sua Biblioteca"
-        component={Biblioteca}
+        component={LibraryScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
             <Feather name="bar-chart-2" size={size} color={color} />
