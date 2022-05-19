@@ -1,18 +1,15 @@
 import React from "react";
 
-import { RecentesItem } from "../RecentesItem";
+import { RecentesItem, RecentesItemProps } from "../RecentesItem";
 
 import * as S from "./styles";
 
 export function RecentesLista({ data }: any) {
   return (
-    <S.Container
-      data={data}
-      renderItem={({ item }: any) => <RecentesItem data={item} />}
-      keyExtractor={({ id }: any) => `${id}`}
-      showsHorizontalScrollIndicator={false}
-      columnWrapperStyle={{ justifyContent: "space-between" }}
-      numColumns={2}
-    />
+    <S.Container>
+      {data.map((item: RecentesItemProps) => (
+        <RecentesItem key={item.id} data={item} />
+      ))}
+    </S.Container>
   );
 }

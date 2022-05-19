@@ -2,14 +2,17 @@ import styled from "styled-components/native";
 import { Image, TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const Container = styled(TouchableOpacity)`
+export const Container = styled.View`
+  width: 50%;
+  padding: 4px;
+`;
+
+export const Button = styled(TouchableOpacity)`
   flex-direction: row;
   align-items: center;
 
-  width: 49%;
+  width: 100%;
   height: ${RFValue(56)}px;
-
-  margin-bottom: ${RFValue(8)}px;
 
   background-color: ${({ theme }) => theme.COLORS.DARK};
   border-radius: ${RFValue(4)}px;
@@ -17,7 +20,7 @@ export const Container = styled(TouchableOpacity)`
   overflow: hidden;
 `;
 
-export const Imagem = styled(Image)`
+export const Imagem = styled.Image`
   width: ${RFValue(56)}px;
   height: ${RFValue(56)}px;
 

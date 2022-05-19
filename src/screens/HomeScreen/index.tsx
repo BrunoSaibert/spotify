@@ -45,7 +45,11 @@ export function HomeScreen() {
           <S.ButtonWrapper>
             <ButtonIcon name="bell" color="LIGHTER" />
             <ButtonIcon name="clock" color="LIGHTER" />
-            <ButtonIcon name="settings" color="LIGHTER" />
+            <ButtonIcon
+              name="settings"
+              color="LIGHTER"
+              style={{ marginRight: -12 }}
+            />
           </S.ButtonWrapper>
         </S.TitleWrapper>
 

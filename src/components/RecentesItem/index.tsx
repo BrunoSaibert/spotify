@@ -16,16 +16,18 @@ type Props = {
 export function RecentesItem({ data }: Props) {
   return (
     <S.Container>
-      <S.Imagem
-        source={data.imageUrl}
-        style={{
-          borderBottomLeftRadius: 4,
-          borderBottomRightRadius: 0,
-          borderTopRightRadius: 0,
-          borderTopLeftRadius: 4,
-        }}
-      />
-      <S.Titulo numberOfLines={2}>{data.title}</S.Titulo>
+      <S.Button activeOpacity={0.7}>
+        <S.Imagem
+          source={data.imageUrl}
+          style={{
+            borderBottomLeftRadius: 4,
+            borderBottomRightRadius: 0,
+            borderTopRightRadius: 0,
+            borderTopLeftRadius: 4,
+          }}
+        />
+        <S.Titulo numberOfLines={2}>{data.title}</S.Titulo>
+      </S.Button>
     </S.Container>
   );
 }
