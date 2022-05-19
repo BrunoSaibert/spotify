@@ -20,7 +20,7 @@ export type MusicDataProps = {
 };
 
 export function PlayerHandle({ children }: PlayerHandleProps) {
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const data = {
     title: "Hip Hop Kids",
