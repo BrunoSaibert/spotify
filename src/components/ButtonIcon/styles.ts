@@ -4,7 +4,7 @@ import { Feather } from "@expo/vector-icons";
 import theme from "../../styles/theme";
 
 export const Button = styled.TouchableOpacity`
-  margin: 0 12px;
+  padding: 0 12px;
 `;
 
 export const Icon = styled(Feather)<{

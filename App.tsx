@@ -13,7 +13,7 @@ import {
 import theme from "./src/styles/theme";
 
 import { Routes } from "./src/routes";
-import { Player } from "./src/components/Player";
+import { PlayerHandle } from "./src/components/PlayerHandle";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -64,9 +64,9 @@ export default function App() {
             },
           }}
         >
-          <Player>
+          <PlayerHandle>
             <Routes />
-          </Player>
+          </PlayerHandle>
         </NavigationContainer>
       </View>
     </ThemeProvider>

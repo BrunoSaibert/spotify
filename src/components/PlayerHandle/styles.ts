@@ -1,5 +1,5 @@
-import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
 import { LinearGradient } from "expo-linear-gradient";
 
 export const Container = styled(LinearGradient)`
@@ -20,12 +20,11 @@ export const Player = styled.View`
 
   padding: 0 8px;
   border-radius: 8px;
+  background-color: ${({ theme }) => theme.COLORS.DARK};
 
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  background-color: ${({ theme }) => theme.COLORS.DARK};
 `;
 
 export const Image = styled.Image`
@@ -33,10 +32,8 @@ export const Image = styled.Image`
   height: 42px;
 
   border-radius: 4px;
-
-  background-color: ${({ theme }) => theme.COLORS.LIGHTER};
-
   margin-right: 12px;
+  background-color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;
 
 export const Title = styled.Text`
@@ -55,7 +52,7 @@ export const Wrapper = styled.View`
   flex-direction: row;
 `;
 
-export const Percent = styled.ScrollView`
+export const Percent = styled.View`
   background: ${({ theme }) => theme.COLORS.GREY};
   width: 94%;
   height: 2px;
@@ -63,7 +60,7 @@ export const Percent = styled.ScrollView`
   margin: -2px auto 0;
 `;
 
-export const PercentBar = styled.ScrollView`
+export const PercentBar = styled.View`
   background: ${({ theme }) => theme.COLORS.LIGHTER};
   width: 30%;
   height: 2px;
