@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from "react";
-import { Pressable, View } from "react-native";
+import { Pressable, View, ImageProps } from "react-native";
 
 import image from "../../assets/images/portugal_the_man.jpg";
 import { ButtonIcon } from "../ButtonIcon";
@@ -7,12 +7,28 @@ import { PlayerModal } from "../PlayerModal";
 
 import * as S from "./styles";
 
-type Props = {
+type PlayerHandleProps = {
   children: ReactNode;
 };
 
-export function PlayerHandle({ children }: Props) {
-  const [modalVisible, setModalVisible] = useState(false);
+export type MusicDataProps = {
+  title: string;
+  artist: string;
+  timer: string;
+  timerTotal: string;
+  image: ImageProps;
+};
+
+export function PlayerHandle({ children }: PlayerHandleProps) {
+  const [modalVisible, setModalVisible] = useState(true);
+
+  const data = {
+    title: "Hip Hop Kids",
+    artist: "Portugal, The Man",
+    timer: "0:49",
+    timerTotal: "3:27",
+    image,
+  };
 
   return (
     <>
@@ -26,10 +42,10 @@ export function PlayerHandle({ children }: Props) {
           <S.Player>
             <Pressable onPress={() => setModalVisible(true)}>
               <S.Wrapper>
-                <S.Image source={image} />
+                <S.Image source={data.image} />
                 <View style={{ justifyContent: "center" }}>
-                  <S.Title>Desire Be Desire Go</S.Title>
-                  <S.SubTitle>Tame Impala</S.SubTitle>
+                  <S.Title>{data.title}</S.Title>
+                  <S.SubTitle>{data.artist}</S.SubTitle>
                 </View>
               </S.Wrapper>
             </Pressable>
@@ -48,6 +64,7 @@ export function PlayerHandle({ children }: Props) {
       </S.Container>
 
       <PlayerModal
+        data={data}
         handleClose={() => setModalVisible(false)}
         visible={modalVisible}
       />

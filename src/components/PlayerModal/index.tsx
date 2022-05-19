@@ -1,21 +1,23 @@
 import React from "react";
-import { Image, Modal, View } from "react-native";
+import { Image, Modal, View, Dimensions } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useTheme } from "styled-components/native";
 
 import { ButtonIcon } from "../ButtonIcon";
-
-import image from "../../assets/images/portugal_the_man.jpg";
+import { MusicDataProps } from "../PlayerHandle";
 
 import * as S from "./styles";
 
 export type PlayerModalProps = {
+  data: MusicDataProps;
   visible: boolean;
   handleClose: () => void;
 };
 
-export function PlayerModal({ visible, handleClose }: PlayerModalProps) {
+export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
   const theme = useTheme();
+
+  const windowHeight = Dimensions.get("window").height;
 
   return (
     <Modal animationType="slide" visible={visible} statusBarTranslucent>
@@ -26,6 +28,7 @@ export function PlayerModal({ visible, handleClose }: PlayerModalProps) {
         style={{
           flex: 1,
           paddingHorizontal: 8,
+          justifyContent: "space-between",
         }}
       >
         <S.Header>
@@ -48,20 +51,23 @@ export function PlayerModal({ visible, handleClose }: PlayerModalProps) {
 
         <S.CenteredRow style={{ justifyContent: "center" }}>
           <Image
-            source={image}
+            source={data.image}
             style={{
-              height: 330,
-              width: 330,
+              height: (windowHeight - 42) / 2,
+              width: (windowHeight - 42) / 2,
+              maxHeight: 330,
+              maxWidth: 330,
+              marginVertical: 16,
             }}
             resizeMode={"contain"}
           />
         </S.CenteredRow>
 
-        <S.Content>
-          <S.CenteredRow>
+        <View>
+          <S.CenteredRow style={{ marginBottom: 16 }}>
             <View>
-              <S.MusicTitle>Hip Hop Kids</S.MusicTitle>
-              <S.MusicArtist>Portugal, The Man</S.MusicArtist>
+              <S.MusicTitle>{data.title}</S.MusicTitle>
+              <S.MusicArtist>{data.artist}</S.MusicArtist>
             </View>
 
             <ButtonIcon
@@ -71,18 +77,25 @@ export function PlayerModal({ visible, handleClose }: PlayerModalProps) {
             />
           </S.CenteredRow>
 
-          <S.Percent>
-            <S.PercentBar />
-            <S.PercentBall />
-          </S.Percent>
-
           <S.CenteredRow>
-            <S.MusicTime>0:49</S.MusicTime>
-            <S.MusicTime>3:27</S.MusicTime>
+            <S.Percent>
+              <S.PercentBar />
+              <S.PercentBall />
+            </S.Percent>
           </S.CenteredRow>
 
-          <S.CenteredRow style={{ marginHorizontal: -12 }}>
-            <ButtonIcon name="shuffle" size={24} color="LIGHTER" />
+          <S.CenteredRow>
+            <S.MusicTime>{data.timer}</S.MusicTime>
+            <S.MusicTime>{data.timerTotal}</S.MusicTime>
+          </S.CenteredRow>
+
+          <S.CenteredRow>
+            <ButtonIcon
+              name="shuffle"
+              size={24}
+              color="LIGHTER"
+              style={{ marginLeft: -12 }}
+            />
             <ButtonIcon name="skip-back" size={24} color="LIGHTER" />
             <ButtonIcon
               name="play"
@@ -98,17 +111,32 @@ export function PlayerModal({ visible, handleClose }: PlayerModalProps) {
               }}
             />
             <ButtonIcon name="skip-forward" size={24} color="LIGHTER" />
-            <ButtonIcon name="repeat" size={24} color="LIGHTER" />
+            <ButtonIcon
+              name="repeat"
+              size={24}
+              color="LIGHTER"
+              style={{ marginRight: -12 }}
+            />
           </S.CenteredRow>
+        </View>
 
-          <S.ShareWrapper>
-            <ButtonIcon name="speaker" size={16} color="LIGHTER" />
-            <S.CenteredRow>
-              <ButtonIcon name="share-2" size={16} color="LIGHTER" />
-              <ButtonIcon name="menu" size={16} color="LIGHTER" />
-            </S.CenteredRow>
-          </S.ShareWrapper>
-        </S.Content>
+        <S.CenteredRow style={{ marginBottom: 60 }}>
+          <ButtonIcon
+            name="speaker"
+            size={16}
+            color="LIGHTER"
+            style={{ marginLeft: -12 }}
+          />
+          <View style={{ flexDirection: "row" }}>
+            <ButtonIcon name="share-2" size={16} color="LIGHTER" />
+            <ButtonIcon
+              name="menu"
+              size={16}
+              color="LIGHTER"
+              style={{ marginRight: -12 }}
+            />
+          </View>
+        </S.CenteredRow>
       </LinearGradient>
     </Modal>
   );
