@@ -25,11 +25,11 @@ export function SliderItem({ data, size }: Props) {
 
   switch (size) {
     case "small":
-      sizeCard = 120;
+      sizeCard = 112;
       break;
 
     default:
-      sizeCard = 152;
+      sizeCard = 144;
       break;
   }
 
@@ -50,7 +50,7 @@ export function SliderItem({ data, size }: Props) {
 
   return (
     <S.Container size={sizeCard}>
-      <S.Imagem source={data.imageUrl} size={sizeCard} round={round} />
+      <S.Image source={data.imageUrl} size={sizeCard} round={round} />
 
       {!!data.title && (
         <S.Title

@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
-  margin: 24px 0;
+  margin-top: 32px;
 `;
 
 export const Title = styled.Text`
