@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 
 import perfilImage from "../../assets/images/profile.jpg";
-import { BibliotecaItem } from "../../components/BibliotecaItem";
+import { LibraryItem } from "../../components/LibraryItem";
 import { ButtonIcon } from "../../components/ButtonIcon";
 import {
   DATA_ARTISTAS,
@@ -33,7 +33,7 @@ export function LibraryScreen() {
 
       {[...DATA_RECENTES, ...DATA_PODCAST, ...DATA_ARTISTAS].map(
         (item, index) => (
-          <BibliotecaItem key={index} data={item} />
+          <LibraryItem key={index} data={item} />
         )
       )}
     </S.Container>

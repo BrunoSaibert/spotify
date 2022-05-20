@@ -3,7 +3,7 @@ import { ImageProps, View } from "react-native";
 
 import * as S from "./styles";
 
-export type BibliotecaItemProps = {
+export type LibraryItemProps = {
   id: string;
   type: "playlist" | "artist" | "podcast";
   title?: string;
@@ -13,12 +13,12 @@ export type BibliotecaItemProps = {
 };
 
 type Props = {
-  data: BibliotecaItemProps;
+  data: LibraryItemProps;
 };
 
 let round: number;
 
-export function BibliotecaItem({ data }: Props) {
+export function LibraryItem({ data }: Props) {
   switch (data.type) {
     case "playlist":
       round = 0;
@@ -36,12 +36,12 @@ export function BibliotecaItem({ data }: Props) {
 
   return (
     <S.Container>
-      <S.Imagem source={data.imageUrl} round={round} />
+      <S.Image source={data.imageUrl} round={round} />
 
-      <View>
+      <View style={{ flex: 1 }}>
         <S.Title numberOfLines={1}>{data.title}</S.Title>
 
-        <S.Description>
+        <S.Description numberOfLines={1}>
           {data.type}
           {data.description ? ` · ${data.description}` : null}
           {data.author ? ` · ${data.author}` : null}
