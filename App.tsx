@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import {
+  OpenSans_400Regular,
   OpenSans_600SemiBold,
   OpenSans_700Bold,
 } from "@expo-google-fonts/open-sans";
@@ -19,6 +20,7 @@ export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
 
   let customFonts = {
+    OpenSans_400Regular,
     OpenSans_600SemiBold,
     OpenSans_700Bold,
   };

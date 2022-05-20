@@ -11,6 +11,7 @@ export default {
   },
 
   FONTS: {
+    OPEN_SANS_400: "OpenSans_400Regular",
     OPEN_SANS_600: "OpenSans_600SemiBold",
     OPEN_SANS_700: "OpenSans_700Bold",
   },
