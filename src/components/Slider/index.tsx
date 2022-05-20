@@ -1,24 +1,20 @@
-import React, { useEffect } from "react";
-import { LogBox, View } from "react-native";
+import React from "react";
+import { View } from "react-native";
 
 import { SliderItem, SliderItemProps } from "../SliderItem";
 
 import * as S from "./styles";
 
-type Props = {
+export type SliderProps = {
   title: string;
   size?: "small" | "large";
   data: SliderItemProps[];
 };
 
-export function Slider({ title, size = "large", data }: Props) {
-  useEffect(() => {
-    LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
-  }, []);
-
+export function Slider({ title, size = "large", data }: SliderProps) {
   return (
     <S.Container>
-      <S.Title style={{ color: "white" }}>{title}</S.Title>
+      <S.Title>{title}</S.Title>
 
       <S.Slider
         data={data}
