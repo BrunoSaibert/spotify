@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Image, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
@@ -12,31 +12,26 @@ export const Button = styled(TouchableOpacity)`
   align-items: center;
 
   width: 100%;
-  height: ${RFValue(56)}px;
-
+  height: 60px;
+  border-radius: 4px;
   background-color: ${({ theme }) => theme.COLORS.DARK};
-  border-radius: ${RFValue(4)}px;
-
-  overflow: hidden;
 `;
 
-export const Imagem = styled.Image`
-  width: ${RFValue(56)}px;
-  height: ${RFValue(56)}px;
-
+export const Image = styled.Image`
+  width: 60px;
+  height: 60px;
   background-color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;
 
-export const Titulo = styled.Text`
-  padding: ${RFValue(8)}px;
-
+export const Title = styled.Text`
+  flex-shrink: 1;
   align-items: center;
   justify-content: center;
-  flex-shrink: 1;
 
-  font-size: ${RFValue(12)}px;
-  line-height: ${RFValue(12 * 1.2)}px;
-  letter-spacing: -0.3px;
+  padding: 8px;
+  font-size: ${RFValue(14)}px;
+  line-height: ${RFValue(14 * 1.2)}px;
+  letter-spacing: -${RFValue(0.4)}px;
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;

@@ -3,21 +3,21 @@ import { ImageProps } from "react-native";
 
 import * as S from "./styles";
 
-export type RecentesItemProps = {
+export type RecentItemProps = {
   id: string;
   title: string;
   imageUrl: ImageProps;
 };
 
 type Props = {
-  data: RecentesItemProps;
+  data: RecentItemProps;
 };
 
-export function RecentesItem({ data }: Props) {
+export function RecentItem({ data }: Props) {
   return (
     <S.Container>
       <S.Button activeOpacity={0.7}>
-        <S.Imagem
+        <S.Image
           source={data.imageUrl}
           style={{
             borderBottomLeftRadius: 4,
@@ -26,7 +26,7 @@ export function RecentesItem({ data }: Props) {
             borderTopLeftRadius: 4,
           }}
         />
-        <S.Titulo numberOfLines={2}>{data.title}</S.Titulo>
+        <S.Title numberOfLines={2}>{data.title}</S.Title>
       </S.Button>
     </S.Container>
   );
