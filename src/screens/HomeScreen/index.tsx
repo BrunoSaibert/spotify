@@ -4,7 +4,7 @@ import { useTheme } from "styled-components";
 import { LinearGradient } from "expo-linear-gradient";
 
 import { ButtonIcon } from "../../components/ButtonIcon";
-import { RecentesLista } from "../../components/RecentesLista";
+import { RecentList } from "../../components/RecentList";
 import { Slider } from "../../components/Slider";
 import {
   DATA_ARTISTAS,
@@ -53,7 +53,7 @@ export function HomeScreen() {
           </S.ButtonWrapper>
         </S.TitleWrapper>
 
-        <RecentesLista data={DATA_RECENTES} />
+        <RecentList data={DATA_RECENTES} />
       </LinearGradient>
 
       <Slider title="Seus programas" data={DATA_PODCAST} />

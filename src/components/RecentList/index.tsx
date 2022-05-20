@@ -4,7 +4,7 @@ import { RecentItem, RecentItemProps } from "../RecentItem";
 
 import * as S from "./styles";
 
-export function RecentesLista({ data }: any) {
+export function RecentList({ data }: any) {
   return (
     <S.Container>
       {data.map((item: RecentItemProps) => (
