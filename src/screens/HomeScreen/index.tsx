@@ -14,8 +14,16 @@ import {
 
 import * as S from "./styles";
 
-export function HomeScreen() {
+import { NavigationScreenProps } from "../../navigation/types";
+
+export function HomeScreen(props: NavigationScreenProps<"HomeScreem">) {
+  const { navigation } = props;
+
   const theme = useTheme();
+
+  function handleNavigation() {
+    navigation.navigate("ArtistScreen");
+  }
 
   const date = new Date();
   const hour = date.getHours();
@@ -49,6 +57,7 @@ export function HomeScreen() {
               name="cog"
               color="LIGHTER"
               style={{ marginRight: -12 }}
+              onPress={handleNavigation}
             />
           </S.ButtonWrapper>
         </S.TitleWrapper>
