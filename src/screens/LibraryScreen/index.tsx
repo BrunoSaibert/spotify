@@ -19,23 +19,91 @@ export function LibraryScreen() {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingBottom: 80 }}
     >
-      <S.TitleWrapper>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <S.Image source={perfilImage} />
-          <S.Title>Sua Biblioteca</S.Title>
+      <S.Header
+        style={{
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 4,
+          },
+          shadowOpacity: 0,
+          shadowRadius: 4.65,
+
+          elevation: 8,
+        }}
+      >
+        <S.TitleWrapper>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <S.Image source={perfilImage} />
+            <S.Title>Sua Biblioteca</S.Title>
+          </View>
+
+          <S.ButtonWrapper>
+            <ButtonIcon name="magnify" color="LIGHTER" />
+            <ButtonIcon
+              name="plus"
+              color="LIGHTER"
+              style={{ marginRight: -12 }}
+            />
+          </S.ButtonWrapper>
+        </S.TitleWrapper>
+
+        <S.FilterButtonWrapper
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        >
+          <S.FilterButton activeOpacity={0.7} style={{ marginLeft: 16 }}>
+            <S.FilterButtonText>Playlist</S.FilterButtonText>
+          </S.FilterButton>
+
+          <S.FilterButton activeOpacity={0.7}>
+            <S.FilterButtonText>Artitas</S.FilterButtonText>
+          </S.FilterButton>
+
+          <S.FilterButton activeOpacity={0.7}>
+            <S.FilterButtonText>Álbuns</S.FilterButtonText>
+          </S.FilterButton>
+
+          <S.FilterButton activeOpacity={0.7}>
+            <S.FilterButtonText>Podcasts e programas</S.FilterButtonText>
+          </S.FilterButton>
+
+          <S.FilterButton activeOpacity={0.7} style={{ marginRight: 16 }}>
+            <S.FilterButtonText>Baixado</S.FilterButtonText>
+          </S.FilterButton>
+        </S.FilterButtonWrapper>
+      </S.Header>
+
+      <S.Content>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: 12,
+          }}
+        >
+          <ButtonIcon
+            name="swap-vertical"
+            color="LIGHTER"
+            size={20}
+            style={{ marginLeft: -12 }}
+            text="Mais recente"
+          />
+          <ButtonIcon
+            name="qrcode"
+            color="LIGHTER"
+            size={20}
+            style={{ marginRight: -12 }}
+          />
         </View>
 
-        <S.ButtonWrapper>
-          <ButtonIcon name="search" color="LIGHTER" />
-          <ButtonIcon name="plus" color="LIGHTER" />
-        </S.ButtonWrapper>
-      </S.TitleWrapper>
-
-      {[...DATA_RECENTES, ...DATA_PODCAST, ...DATA_ARTISTAS].map(
-        (item, index) => (
-          <LibraryItem key={index} data={item} />
-        )
-      )}
+        {[...DATA_RECENTES, ...DATA_PODCAST, ...DATA_ARTISTAS].map(
+          (item, index) => (
+            <LibraryItem key={index} data={item} />
+          )
+        )}
+      </S.Content>
     </S.Container>
   );
 }
