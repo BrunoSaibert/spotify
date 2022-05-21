@@ -46,7 +46,7 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
             <S.SubTitle>Tocando da sua biblioteca</S.SubTitle>
             <S.Title>Músicas Curtidas</S.Title>
           </View>
-          <ButtonIcon name="more-vertical" color="LIGHTER" />
+          <ButtonIcon name="dots-vertical" color="LIGHTER" />
         </S.Header>
 
         <S.CenteredRow style={{ justifyContent: "center" }}>
@@ -72,7 +72,7 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
 
             <ButtonIcon
               name="heart"
-              color="LIGHTER"
+              color="PRIMARY"
               style={{ marginRight: -12 }}
             />
           </S.CenteredRow>
@@ -96,11 +96,11 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
               color="LIGHTER"
               style={{ marginLeft: -12 }}
             />
-            <ButtonIcon name="skip-back" size={24} color="LIGHTER" />
+            <ButtonIcon name="skip-previous" size={32} color="LIGHTER" />
             <ButtonIcon
               name="play"
               color="DARKER"
-              size={32}
+              size={42}
               style={{
                 backgroundColor: "white",
                 width: 68,
@@ -110,7 +110,7 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
                 justifyContent: "center",
               }}
             />
-            <ButtonIcon name="skip-forward" size={24} color="LIGHTER" />
+            <ButtonIcon name="skip-next" size={32} color="LIGHTER" />
             <ButtonIcon
               name="repeat"
               size={24}
@@ -128,7 +128,7 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
             style={{ marginLeft: -12 }}
           />
           <View style={{ flexDirection: "row" }}>
-            <ButtonIcon name="share-2" size={16} color="LIGHTER" />
+            <ButtonIcon name="share-variant" size={16} color="LIGHTER" />
             <ButtonIcon
               name="menu"
               size={16}

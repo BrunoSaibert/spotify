@@ -52,8 +52,8 @@ export function PlayerHandle({ children }: PlayerHandleProps) {
 
             <S.Wrapper>
               <ButtonIcon name="speaker" />
-              <ButtonIcon name="heart" />
-              <ButtonIcon name="play" color="LIGHTER" />
+              <ButtonIcon name="heart" color="PRIMARY" />
+              <ButtonIcon name="play" size={32} color="LIGHTER" />
             </S.Wrapper>
           </S.Player>
 

@@ -46,7 +46,7 @@ export function HomeScreen() {
             <ButtonIcon name="bell" color="LIGHTER" />
             <ButtonIcon name="clock" color="LIGHTER" />
             <ButtonIcon
-              name="settings"
+              name="cog"
               color="LIGHTER"
               style={{ marginRight: -12 }}
             />
