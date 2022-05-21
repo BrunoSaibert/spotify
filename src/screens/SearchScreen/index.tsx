@@ -33,8 +33,8 @@ export function SearchScreen() {
         data={DATA_PODCAST}
       />
       <SliderBusca
-        title="Categorias populares de podcast"
-        data={DATA_ARTISTAS}
+        title="Todas as sessões"
+        data={[...DATA_ARTISTAS, ...DATA_PODCAST]}
       />
     </S.Container>
   );

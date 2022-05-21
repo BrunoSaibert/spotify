@@ -19,19 +19,7 @@ export function LibraryScreen() {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingBottom: 80 }}
     >
-      <S.Header
-        style={{
-          shadowColor: "#000",
-          shadowOffset: {
-            width: 0,
-            height: 4,
-          },
-          shadowOpacity: 0,
-          shadowRadius: 4.65,
-
-          elevation: 8,
-        }}
-      >
+      <S.Header>
         <S.TitleWrapper>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <S.Image source={perfilImage} />

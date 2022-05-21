@@ -9,14 +9,11 @@ export function SliderBusca({ title, data }: any) {
     <S.Container>
       <S.Title>{title}</S.Title>
 
-      <S.List
-        data={data}
-        renderItem={({ item }: any) => <SliderBuscaItem data={item} />}
-        keyExtractor={({ id }: any) => `${id}`}
-        showsHorizontalScrollIndicator={false}
-        columnWrapperStyle={{ justifyContent: "space-between" }}
-        numColumns={2}
-      />
+      <S.List>
+        {data.map((item, index) => (
+          <SliderBuscaItem key={index} data={item} />
+        ))}
+      </S.List>
     </S.Container>
   );
 }

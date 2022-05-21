@@ -16,10 +16,12 @@ type Props = {
 
 export function SliderBuscaItem({ data }: Props) {
   return (
-    <S.Container bgColor={data.bgColor}>
-      <S.Title numberOfLines={3}>{data.title}</S.Title>
+    <S.Container>
+      <S.Button activeOpacity={0.7} bgColor={data.bgColor}>
+        <S.Title numberOfLines={3}>{data.title}</S.Title>
 
-      <S.Image source={data.imageUrl} />
+        <S.Image source={data.imageUrl} />
+      </S.Button>
     </S.Container>
   );
 }
