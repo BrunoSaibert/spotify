@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "styled-components";
 
-import { SliderBusca } from "../../components/SliderBusca";
+import { SearchList } from "../../components/SearchList";
 import { DATA_ARTISTAS, DATA_PODCAST } from "../../utils/database";
 
 import * as S from "./styles";
@@ -27,12 +27,9 @@ export function SearchScreen() {
         </S.SearchInput>
       </S.SearchInputWrapper>
 
-      <SliderBusca title="Seus artitas favoritos" data={DATA_ARTISTAS} />
-      <SliderBusca
-        title="Categorias populares de podcast"
-        data={DATA_PODCAST}
-      />
-      <SliderBusca
+      <SearchList title="Seus artitas favoritos" data={DATA_ARTISTAS} />
+      <SearchList title="Categorias populares de podcast" data={DATA_PODCAST} />
+      <SearchList
         title="Todas as sessões"
         data={[...DATA_ARTISTAS, ...DATA_PODCAST]}
       />

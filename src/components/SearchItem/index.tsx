@@ -3,7 +3,7 @@ import { ImageProps } from "react-native";
 
 import * as S from "./styles";
 
-export type SliderBuscaItemProps = {
+export type SearchItemProps = {
   id: string;
   title: string;
   imageUrl: ImageProps;
@@ -11,10 +11,10 @@ export type SliderBuscaItemProps = {
 };
 
 type Props = {
-  data: SliderBuscaItemProps;
+  data: SearchItemProps;
 };
 
-export function SliderBuscaItem({ data }: Props) {
+export function SearchItem({ data }: Props) {
   return (
     <S.Container>
       <S.Button activeOpacity={0.7} bgColor={data.bgColor}>
