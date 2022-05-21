@@ -50,10 +50,10 @@ Esse projeto tem por finalidade desenvolver do zero um app em React Native recri
   - [x] Início
   - [x] Busca
   - [x] Biblioteca
-  - [ ] Player
+  - [x] Player
   - [ ] Playlist
   - [ ] Artista
-- [ ] Recriar componente de player fixo
+- [x] Recriar componente de player fixo
 - [ ] Testes unitátios
 
 ---
