@@ -1,7 +1,8 @@
 import React from "react";
-import { Image, Modal, View, Dimensions } from "react-native";
+import { Image, Modal, View, Dimensions, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useTheme } from "styled-components/native";
+import { useNavigation } from "@react-navigation/native";
 
 import { ButtonIcon } from "../ButtonIcon";
 import { MusicDataProps } from "../PlayerHandle";
@@ -16,6 +17,12 @@ export type PlayerModalProps = {
 
 export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
   const theme = useTheme();
+  const { navigate } = useNavigation();
+
+  function handleNavigation() {
+    navigate("ArtistScreen");
+    handleClose();
+  }
 
   const windowHeight = Dimensions.get("window").height;
 
@@ -25,11 +32,6 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
         colors={["#646464", theme.COLORS.DARKER]}
         start={[0, 0]}
         end={[0, 1]}
-        style={{
-          flex: 1,
-          paddingHorizontal: 8,
-          justifyContent: "space-between",
-        }}
       >
         <S.Header>
           <ButtonIcon
@@ -65,10 +67,10 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
 
         <View>
           <S.CenteredRow style={{ marginBottom: 16 }}>
-            <View>
+            <TouchableOpacity activeOpacity={0.7} onPress={handleNavigation}>
               <S.MusicTitle>{data.title}</S.MusicTitle>
               <S.MusicArtist>{data.artist}</S.MusicArtist>
-            </View>
+            </TouchableOpacity>
 
             <ButtonIcon
               name="heart"

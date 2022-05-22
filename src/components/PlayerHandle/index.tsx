@@ -24,7 +24,7 @@ export function PlayerHandle({ children }: PlayerHandleProps) {
 
   const data = {
     title: "Hip Hop Kids",
-    artist: "Portugal, The Man",
+    artist: "Portugal. The Man",
     timer: "0:49",
     timerTotal: "3:27",
     image,
