@@ -32,6 +32,10 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
         colors={["#646464", theme.COLORS.DARKER]}
         start={[0, 0]}
         end={[0, 1]}
+        style={{
+          flex: 1,
+          justifyContent: "space-between",
+        }}
       >
         <S.Header>
           <ButtonIcon
