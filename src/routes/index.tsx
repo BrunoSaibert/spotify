@@ -8,18 +8,44 @@ import { SearchScreen } from "../screens/SearchScreen";
 import { LibraryScreen } from "../screens/LibraryScreen";
 import { ArtistScreen } from "../screens/ArtistScreen";
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+const StackHome = createStackNavigator();
+const StackSearch = createStackNavigator();
+const StackLibrary = createStackNavigator();
 
-function StackNavigatorHome() {
+function StackHomeNavigator() {
   return (
-    <Stack.Navigator
+    <StackHome.Navigator
       initialRouteName="HomeScreen"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
-    </Stack.Navigator>
+      <StackHome.Screen name="HomeScreen" component={HomeScreen} />
+      <StackHome.Screen name="ArtistScreen" component={ArtistScreen} />
+    </StackHome.Navigator>
+  );
+}
+
+function StackSearchNavigator() {
+  return (
+    <StackSearch.Navigator
+      initialRouteName="SearchScreen"
+      screenOptions={{ headerShown: false }}
+    >
+      <StackSearch.Screen name="SearchScreen" component={SearchScreen} />
+      <StackSearch.Screen name="ArtistScreen" component={ArtistScreen} />
+    </StackSearch.Navigator>
+  );
+}
+
+function StackLibraryNavigator() {
+  return (
+    <StackLibrary.Navigator
+      initialRouteName="LibraryScreen"
+      screenOptions={{ headerShown: false }}
+    >
+      <StackLibrary.Screen name="LibraryScreen" component={LibraryScreen} />
+      <StackLibrary.Screen name="ArtistScreen" component={ArtistScreen} />
+    </StackLibrary.Navigator>
   );
 }
 
@@ -43,8 +69,8 @@ export function Routes() {
       }}
     >
       <Tab.Screen
-        name="HomeScreem"
-        component={StackNavigatorHome}
+        name="HomeTab"
+        component={StackHomeNavigator}
         options={{
           tabBarLabel: "Início",
           tabBarIcon: ({ size, color }) => (
@@ -53,8 +79,8 @@ export function Routes() {
         }}
       />
       <Tab.Screen
-        name="SearchScreen"
-        component={SearchScreen}
+        name="SearchTab"
+        component={StackSearchNavigator}
         options={{
           tabBarLabel: "Buscar",
           tabBarIcon: ({ size, color }) => (
@@ -63,8 +89,8 @@ export function Routes() {
         }}
       />
       <Tab.Screen
-        name="LibraryScreen"
-        component={LibraryScreen}
+        name="LibraryTab"
+        component={StackLibraryNavigator}
         options={{
           tabBarLabel: "Sua Biblioteca",
           tabBarIcon: ({ size, color }) => (
