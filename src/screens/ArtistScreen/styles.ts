@@ -106,7 +106,6 @@ export const ButtonFollowText = styled.Text`
 
 export const LikedSongs = styled.View`
   margin-top: 16px;
-  margin-bottom: 16px;
 
   flex-direction: row;
   align-items: center;
@@ -134,4 +133,18 @@ export const LikedSongsArtist = styled.Text`
   letter-spacing: -${RFValue(0.2)}px;
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_400};
   color: ${({ theme }) => theme.COLORS.GREY};
+`;
+
+export const Section = styled.View`
+  margin-top: 24px;
+`;
+
+export const SectionTitle = styled.Text`
+  font-size: ${RFValue(20)}px;
+  line-height: ${RFValue(20 * 1.2)}px;
+  letter-spacing: -${RFValue(0.6)}px;
+  font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
+  color: ${({ theme }) => theme.COLORS.LIGHTER};
+
+  margin-bottom: 12px;
 `;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Animated, TouchableOpacity, View } from "react-native";
 import { useTheme } from "styled-components/native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import bandImage from "../../assets/images/bg-portugal-the-man.jpg";
 import PlayShuffleSvg from "../../assets/PlayShuffle.svg";
@@ -157,7 +158,26 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
             </S.Actions>
 
             <S.LikedSongs>
-              <S.LikedSongsImage source={bandImage} />
+              <View style={{ position: "relative" }}>
+                <S.LikedSongsImage source={bandImage} />
+                <View
+                  style={{
+                    width: 22,
+                    height: 22,
+                    borderRadius: 22,
+                    position: "absolute",
+                    bottom: -4,
+                    right: 8,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: `${theme.COLORS.PRIMARY}`,
+                    borderWidth: 2,
+                    borderColor: `${theme.COLORS.DARKER}`,
+                  }}
+                >
+                  <MaterialCommunityIcons name="heart" color="white" />
+                </View>
+              </View>
               <View>
                 <S.LikedSongsTitle>Músicas Curtidas</S.LikedSongsTitle>
                 <S.LikedSongsArtist>
@@ -166,11 +186,21 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
               </View>
             </S.LikedSongs>
 
-            {[...DATA_RECENTES, ...DATA_PODCAST, ...DATA_ARTISTAS].map(
-              (item, index) => (
+            <S.Section>
+              <S.SectionTitle>Popular</S.SectionTitle>
+
+              {DATA_PODCAST.map((item, index) => (
                 <LibraryItem key={index} data={item} />
-              )
-            )}
+              ))}
+            </S.Section>
+
+            <S.Section>
+              <S.SectionTitle>Lancamentos populares</S.SectionTitle>
+
+              {DATA_RECENTES.map((item, index) => (
+                <LibraryItem key={index} data={item} />
+              ))}
+            </S.Section>
           </S.Container>
         </S.ScrollContainer>
       </S.Wrapper>
