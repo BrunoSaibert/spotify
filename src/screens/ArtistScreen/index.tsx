@@ -138,13 +138,12 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
             { useNativeDriver: false }
           )}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 80 }}
         >
           <S.Header>
             <S.HeaderTitle>{artistName}</S.HeaderTitle>
           </S.Header>
 
-          <S.Container>
+          <S.Container style={{ paddingBottom: 135 }}>
             <S.Listeners>17.487.916 ouvintes mensais</S.Listeners>
 
             <S.Actions>

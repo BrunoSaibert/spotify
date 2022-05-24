@@ -13,7 +13,7 @@ export function SearchScreen() {
     <S.Container
       stickyHeaderIndices={[1]}
       showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingBottom: 80 }}
+      contentContainerStyle={{ paddingBottom: 135 }}
     >
       <S.Title>Buscar</S.Title>
 

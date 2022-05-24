@@ -17,7 +17,7 @@ export function LibraryScreen() {
     <S.Container
       stickyHeaderIndices={[0]}
       showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingBottom: 80 }}
+      contentContainerStyle={{ paddingBottom: 135 }}
     >
       <S.Header>
         <S.TitleWrapper>

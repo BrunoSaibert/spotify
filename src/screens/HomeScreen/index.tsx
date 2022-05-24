@@ -40,7 +40,7 @@ export function HomeScreen(props: NavigationScreenProps<"HomeScreem">) {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingBottom: 80 }}
+      contentContainerStyle={{ paddingBottom: 135 }}
     >
       <LinearGradient
         colors={[theme.COLORS.PRIMARY, "transparent"]}

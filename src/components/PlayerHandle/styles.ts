@@ -1,8 +1,7 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { LinearGradient } from "expo-linear-gradient";
 
-export const Container = styled(LinearGradient)`
+export const Container = styled.View`
   width: 100%;
   height: 100px;
   padding: 8px;

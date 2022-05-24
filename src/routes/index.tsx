@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
+import { LinearGradient } from "expo-linear-gradient";
 
 import { HomeScreen } from "../screens/HomeScreen";
 import { SearchScreen } from "../screens/SearchScreen";
@@ -59,13 +60,26 @@ export function Routes() {
         tabBarActiveTintColor: theme.COLORS.LIGHTER,
         tabBarInactiveTintColor: theme.COLORS.GREY,
         tabBarStyle: {
-          backgroundColor: theme.COLORS.DARKER,
-          height: 56,
-          paddingTop: 8,
+          position: "absolute",
           paddingBottom: 8,
           paddingHorizontal: 25,
-          borderTopColor: theme.COLORS.DARK,
+          borderTopWidth: 0,
+          elevation: 0,
         },
+        tabBarBackground: () => (
+          <LinearGradient
+            colors={["transparent", theme.COLORS.DARKER]}
+            start={[0, 0]}
+            end={[0, 1]}
+            style={{
+              width: "100%",
+              height: 150,
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+            }}
+          />
+        ),
       }}
     >
       <Tab.Screen

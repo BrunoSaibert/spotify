@@ -33,34 +33,28 @@ export function PlayerHandle({ children }: PlayerHandleProps) {
   return (
     <>
       {children}
-      <S.Container
-        colors={["transparent", "#222222dd"]}
-        start={[0, 0]}
-        end={[0, 1]}
-      >
-        <View>
-          <S.Player>
-            <Pressable onPress={() => setModalVisible(true)}>
-              <S.Wrapper>
-                <S.Image source={data.image} />
-                <View style={{ justifyContent: "center" }}>
-                  <S.Title>{data.title}</S.Title>
-                  <S.SubTitle>{data.artist}</S.SubTitle>
-                </View>
-              </S.Wrapper>
-            </Pressable>
-
+      <S.Container>
+        <S.Player>
+          <Pressable onPress={() => setModalVisible(true)}>
             <S.Wrapper>
-              <ButtonIcon name="speaker" />
-              <ButtonIcon name="heart" color="PRIMARY" />
-              <ButtonIcon name="play" size={32} color="LIGHTER" />
+              <S.Image source={data.image} />
+              <View style={{ justifyContent: "center" }}>
+                <S.Title>{data.title}</S.Title>
+                <S.SubTitle>{data.artist}</S.SubTitle>
+              </View>
             </S.Wrapper>
-          </S.Player>
+          </Pressable>
 
-          <S.Percent>
-            <S.PercentBar />
-          </S.Percent>
-        </View>
+          <S.Wrapper>
+            <ButtonIcon name="speaker" />
+            <ButtonIcon name="heart" color="PRIMARY" />
+            <ButtonIcon name="play" size={32} color="LIGHTER" />
+          </S.Wrapper>
+        </S.Player>
+
+        <S.Percent>
+          <S.PercentBar />
+        </S.Percent>
       </S.Container>
 
       <PlayerModal
