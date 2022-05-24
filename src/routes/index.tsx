@@ -68,7 +68,7 @@ export function Routes() {
         },
         tabBarBackground: () => (
           <LinearGradient
-            colors={["transparent", theme.COLORS.DARKER]}
+            colors={["transparent", "#000"]}
             start={[0, 0]}
             end={[0, 1]}
             style={{
