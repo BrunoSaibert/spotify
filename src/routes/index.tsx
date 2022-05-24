@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Feather } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -10,43 +10,41 @@ import { LibraryScreen } from "../screens/LibraryScreen";
 import { ArtistScreen } from "../screens/ArtistScreen";
 
 const Tab = createBottomTabNavigator();
-const StackHome = createStackNavigator();
-const StackSearch = createStackNavigator();
-const StackLibrary = createStackNavigator();
+const Stack = createStackNavigator();
 
 function StackHomeNavigator() {
   return (
-    <StackHome.Navigator
+    <Stack.Navigator
       initialRouteName="HomeScreen"
       screenOptions={{ headerShown: false }}
     >
-      <StackHome.Screen name="HomeScreen" component={HomeScreen} />
-      <StackHome.Screen name="ArtistScreen" component={ArtistScreen} />
-    </StackHome.Navigator>
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
+    </Stack.Navigator>
   );
 }
 
 function StackSearchNavigator() {
   return (
-    <StackSearch.Navigator
+    <Stack.Navigator
       initialRouteName="SearchScreen"
       screenOptions={{ headerShown: false }}
     >
-      <StackSearch.Screen name="SearchScreen" component={SearchScreen} />
-      <StackSearch.Screen name="ArtistScreen" component={ArtistScreen} />
-    </StackSearch.Navigator>
+      <Stack.Screen name="SearchScreen" component={SearchScreen} />
+      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
+    </Stack.Navigator>
   );
 }
 
 function StackLibraryNavigator() {
   return (
-    <StackLibrary.Navigator
+    <Stack.Navigator
       initialRouteName="LibraryScreen"
       screenOptions={{ headerShown: false }}
     >
-      <StackLibrary.Screen name="LibraryScreen" component={LibraryScreen} />
-      <StackLibrary.Screen name="ArtistScreen" component={ArtistScreen} />
-    </StackLibrary.Navigator>
+      <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
+      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
+    </Stack.Navigator>
   );
 }
 
@@ -87,8 +85,12 @@ export function Routes() {
         component={StackHomeNavigator}
         options={{
           tabBarLabel: "Início",
-          tabBarIcon: ({ size, color }) => (
-            <Feather name="home" size={size} color={color} />
+          tabBarIcon: ({ focused, size, color }) => (
+            <MaterialCommunityIcons
+              name={focused ? "home" : "home-outline"}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -97,8 +99,12 @@ export function Routes() {
         component={StackSearchNavigator}
         options={{
           tabBarLabel: "Buscar",
-          tabBarIcon: ({ size, color }) => (
-            <Feather name="search" size={size} color={color} />
+          tabBarIcon: ({ focused, size, color }) => (
+            <MaterialCommunityIcons
+              name={focused ? "tag-search" : "tag-search-outline"}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -107,8 +113,14 @@ export function Routes() {
         component={StackLibraryNavigator}
         options={{
           tabBarLabel: "Sua Biblioteca",
-          tabBarIcon: ({ size, color }) => (
-            <Feather name="bar-chart-2" size={size} color={color} />
+          tabBarIcon: ({ focused, size, color }) => (
+            <MaterialCommunityIcons
+              name={
+                focused ? "music-box-multiple" : "music-box-multiple-outline"
+              }
+              size={size}
+              color={color}
+            />
           ),
         }}
       />

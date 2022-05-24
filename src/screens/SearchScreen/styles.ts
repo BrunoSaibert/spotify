@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
-import { Feather } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export const Container = styled.ScrollView`
   padding: 0 ${RFValue(16)}px;
@@ -43,7 +43,7 @@ export const Input = styled.TextInput`
   color: ${({ theme }) => theme.COLORS.DARK};
 `;
 
-export const InputIcon = styled(Feather)`
+export const InputIcon = styled(MaterialCommunityIcons)`
   color: ${({ theme }) => theme.COLORS.DARK};
   font-size: ${RFValue(24)}px;
 `;

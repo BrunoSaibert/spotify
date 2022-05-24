@@ -19,7 +19,7 @@ export function SearchScreen() {
 
       <S.SearchInputWrapper>
         <S.SearchInput>
-          <S.InputIcon name="search" />
+          <S.InputIcon name="magnify" />
           <S.Input
             placeholder="Artistas, músicas ou podcasts"
             placeholderTextColor={theme.COLORS.DARK}
