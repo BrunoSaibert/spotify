@@ -117,7 +117,7 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
         <Animated.View
           style={{
             opacity: scrollY.interpolate({
-              inputRange: [0, 180],
+              inputRange: [0, 150],
               outputRange: [1, 0],
               extrapolate: "clamp",
             }),
@@ -127,6 +127,7 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
         </Animated.View>
 
         <S.ScrollContainer
+          bounces={false}
           scrollEventThrottle={16}
           onScroll={Animated.event(
             [

@@ -11,6 +11,7 @@ export function SearchScreen() {
 
   return (
     <S.Container
+      bounces={false}
       stickyHeaderIndices={[1]}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingBottom: 135 }}

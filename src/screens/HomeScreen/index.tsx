@@ -39,6 +39,7 @@ export function HomeScreen(props: NavigationScreenProps<"HomeScreem">) {
 
   return (
     <ScrollView
+      bounces={false}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingBottom: 135 }}
     >

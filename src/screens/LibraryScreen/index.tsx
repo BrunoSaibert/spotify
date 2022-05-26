@@ -15,11 +15,26 @@ import * as S from "./styles";
 export function LibraryScreen() {
   return (
     <S.Container
+      bounces={false}
       stickyHeaderIndices={[0]}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingBottom: 135 }}
     >
-      <S.Header>
+      <S.Header
+        style={{
+          borderBottomColor: "#010101",
+          borderBottomWidth: 2,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 2,
+          },
+          shadowOpacity: 0.25,
+          shadowRadius: 3.84,
+
+          elevation: 5,
+        }}
+      >
         <S.TitleWrapper>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <S.Image source={perfilImage} />
