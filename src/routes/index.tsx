@@ -63,6 +63,7 @@ export function Routes() {
           paddingHorizontal: 25,
           borderTopWidth: 0,
           elevation: 0,
+          height: 50,
         },
         tabBarBackground: () => (
           <LinearGradient
