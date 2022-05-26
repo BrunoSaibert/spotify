@@ -38,7 +38,6 @@ export const Image = styled.Image`
 export const Title = styled.Text`
   font-size: ${RFValue(14)}px;
   line-height: ${RFValue(14 * 1.2)}px;
-  letter-spacing: -${RFValue(0.6)}px;
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;

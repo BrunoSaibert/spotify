@@ -52,10 +52,10 @@ export function HomeScreen(props: NavigationScreenProps<"HomeScreem">) {
           <S.Title>{title}</S.Title>
 
           <S.ButtonWrapper>
-            <ButtonIcon name="bell" color="LIGHTER" />
-            <ButtonIcon name="clock" color="LIGHTER" />
+            <ButtonIcon name="bell-outline" color="LIGHTER" />
+            <ButtonIcon name="progress-clock" color="LIGHTER" />
             <ButtonIcon
-              name="cog"
+              name="cog-outline"
               color="LIGHTER"
               style={{ marginRight: -12 }}
               onPress={handleNavigation}
