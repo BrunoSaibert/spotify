@@ -4,11 +4,11 @@ import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export const Container = styled.ScrollView`
-  padding: 0 ${RFValue(16)}px;
+  padding: 0 16px;
 `;
 
 export const Title = styled.Text`
-  margin-top: ${getStatusBarHeight() + RFValue(48)}px;
+  margin-top: ${getStatusBarHeight() + 48}px;
 
   font-size: ${RFValue(24)}px;
   line-height: ${RFValue(24)}px;
@@ -20,30 +20,30 @@ export const Title = styled.Text`
 
 export const SearchInputWrapper = styled.View`
   background-color: ${({ theme }) => theme.COLORS.DARKER};
-  padding: ${RFValue(32)}px 0 ${RFValue(8)}px;
+  padding-top: 24px;
 `;
 
 export const SearchInput = styled.View`
   background-color: ${({ theme }) => theme.COLORS.LIGHTER};
 
   width: 100%;
-  height: ${RFValue(50)}px;
+  height: 50px;
 
-  padding: ${RFValue(8)}px ${RFValue(16)}px;
-  margin: 0 auto;
+  padding: 8px 16px;
+  margin: 12px auto 8px;
 
-  border-radius: ${RFValue(6)}px;
+  border-radius: 6px;
 
   flex-direction: row;
   align-items: center;
 `;
 
 export const Input = styled.TextInput`
-  margin-left: ${RFValue(8)}px;
+  margin-left: 8px;
   color: ${({ theme }) => theme.COLORS.DARK};
 `;
 
 export const InputIcon = styled(MaterialCommunityIcons)`
   color: ${({ theme }) => theme.COLORS.DARK};
-  font-size: ${RFValue(24)}px;
+  font-size: 24px;
 `;

@@ -10,14 +10,18 @@ export const Header = styled.View`
 
 export const Title = styled.Text`
   font-size: ${RFValue(13)}px;
+  line-height: ${RFValue(13 * 1.2)}px;
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;
 
 export const SubTitle = styled.Text`
   font-size: ${RFValue(11)}px;
-  font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_600};
+  line-height: ${RFValue(11 * 1.2)}px;
+  letter-spacing: ${RFValue(1)}px;
+  font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_400};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
+  text-transform: uppercase;
 `;
 
 export const CenteredRow = styled.View`
@@ -30,18 +34,24 @@ export const CenteredRow = styled.View`
 
 export const MusicTitle = styled.Text`
   font-size: ${RFValue(22)}px;
+  line-height: ${RFValue(22 * 1.2)}px;
+  letter-spacing: -${RFValue(0.4)}px;
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;
 
 export const MusicArtist = styled.Text`
   font-size: ${RFValue(14)}px;
+  line-height: ${RFValue(14 * 1.2)}px;
+  letter-spacing: ${RFValue(0.6)}px;
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_600};
   color: ${({ theme }) => theme.COLORS.GREY};
 `;
 
 export const MusicTime = styled.Text`
   font-size: ${RFValue(12)}px;
+  line-height: ${RFValue(12 * 1.2)}px;
+  letter-spacing: ${RFValue(0.6)}px;
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_600};
   color: ${({ theme }) => theme.COLORS.GREY};
 `;
