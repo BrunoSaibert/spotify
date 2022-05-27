@@ -54,6 +54,7 @@ Esse projeto tem por finalidade desenvolver do zero um app em React Native recri
   - [ ] Playlist
   - [x] Artista
 - [x] Recriar componente de player fixo
+- [ ] Integração com o Firebase - base de dados
 - [ ] Tornar telas dinâmicas
 - [ ] Testes unitátios
 
