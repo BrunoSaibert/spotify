@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
+import { getBottomSpace } from "react-native-iphone-x-helper";
 
 export const Container = styled.View`
   width: 100%;
@@ -9,7 +10,7 @@ export const Container = styled.View`
   justify-content: flex-end;
 
   position: absolute;
-  bottom: 56px;
+  bottom: ${getBottomSpace() + 50}px;
   left: 0px;
 `;
 

@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import { LinearGradient } from "expo-linear-gradient";
+import { getBottomSpace } from "react-native-iphone-x-helper";
 
 import { HomeScreen } from "../screens/HomeScreen";
 import { SearchScreen } from "../screens/SearchScreen";
@@ -59,11 +60,11 @@ export function Routes() {
         tabBarInactiveTintColor: theme.COLORS.GREY,
         tabBarStyle: {
           position: "absolute",
-          paddingBottom: 8,
+          paddingBottom: getBottomSpace() + 8,
           paddingHorizontal: 25,
           borderTopWidth: 0,
           elevation: 0,
-          height: 50,
+          height: getBottomSpace() + 50,
         },
         tabBarBackground: () => (
           <LinearGradient
@@ -72,7 +73,7 @@ export function Routes() {
             end={[0, 1]}
             style={{
               width: "100%",
-              height: 150,
+              height: getBottomSpace() + 150,
               position: "absolute",
               bottom: 0,
               left: 0,

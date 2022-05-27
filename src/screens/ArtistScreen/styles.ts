@@ -2,6 +2,8 @@ import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import { Platform } from "react-native";
 
 export const Wrapper = styled(LinearGradient)`
   flex: 1;
@@ -15,7 +17,7 @@ export const AnimatedHeader = styled.View`
 
   padding: 24px 8px 0;
   width: 100%;
-  height: 80px;
+  height: ${getStatusBarHeight() + (Platform.OS === "ios" ? 80 : 50)}px;
 `;
 
 export const AnimatedHeaderIcon = styled(MaterialCommunityIcons)`

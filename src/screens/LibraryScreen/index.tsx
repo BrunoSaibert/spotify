@@ -1,5 +1,6 @@
 import React from "react";
 import { View } from "react-native";
+import { getBottomSpace } from "react-native-iphone-x-helper";
 
 import perfilImage from "../../assets/images/profile.jpg";
 import { LibraryItem } from "../../components/LibraryItem";
@@ -18,21 +19,12 @@ export function LibraryScreen() {
       bounces={false}
       stickyHeaderIndices={[0]}
       showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingBottom: 135 }}
+      contentContainerStyle={{ paddingBottom: getBottomSpace() + 144 }}
     >
       <S.Header
         style={{
           borderBottomColor: "#010101",
           borderBottomWidth: 2,
-          shadowColor: "#000",
-          shadowOffset: {
-            width: 0,
-            height: 2,
-          },
-          shadowOpacity: 0.25,
-          shadowRadius: 3.84,
-
-          elevation: 5,
         }}
       >
         <S.TitleWrapper>

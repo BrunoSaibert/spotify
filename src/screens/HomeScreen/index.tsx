@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView } from "react-native";
 import { useTheme } from "styled-components";
 import { LinearGradient } from "expo-linear-gradient";
+import { getBottomSpace } from "react-native-iphone-x-helper";
 
 import { ButtonIcon } from "../../components/ButtonIcon";
 import { RecentList } from "../../components/RecentList";
@@ -41,7 +42,7 @@ export function HomeScreen(props: NavigationScreenProps<"HomeScreem">) {
     <ScrollView
       bounces={false}
       showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingBottom: 135 }}
+      contentContainerStyle={{ paddingBottom: getBottomSpace() + 144 }}
     >
       <LinearGradient
         colors={[theme.COLORS.PRIMARY, "transparent"]}

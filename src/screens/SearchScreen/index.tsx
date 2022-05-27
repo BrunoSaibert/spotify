@@ -1,4 +1,5 @@
 import React from "react";
+import { getBottomSpace } from "react-native-iphone-x-helper";
 import { useTheme } from "styled-components";
 
 import { SearchList } from "../../components/SearchList";
@@ -14,7 +15,7 @@ export function SearchScreen() {
       bounces={false}
       stickyHeaderIndices={[1]}
       showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingBottom: 135 }}
+      contentContainerStyle={{ paddingBottom: getBottomSpace() + 144 }}
     >
       <S.Title>Buscar</S.Title>
 

@@ -6,6 +6,12 @@ export const Container = styled.ScrollView``;
 export const Header = styled.View`
   padding: 70px 0 8px;
   background-color: ${({ theme }) => theme.COLORS.DARKER};
+
+  shadow-color: #000;
+  shadow-offset: 0px 5px;
+  shadow-radius: 6.27px;
+
+  elevation: 10;
 `;
 
 export const TitleWrapper = styled.View`

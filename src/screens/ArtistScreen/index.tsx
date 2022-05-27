@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Animated, TouchableOpacity, View } from "react-native";
+import { Animated, Platform, TouchableOpacity, View } from "react-native";
 import { useTheme } from "styled-components/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  getBottomSpace,
+  getStatusBarHeight,
+} from "react-native-iphone-x-helper";
 
 import bandImage from "../../assets/images/bg-portugal-the-man.jpg";
 import PlayShuffleSvg from "../../assets/PlayShuffle.svg";
@@ -102,7 +106,10 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
               style={{
                 top: scrollY.interpolate({
                   inputRange: [0, 265],
-                  outputRange: [295, 30],
+                  outputRange: [
+                    getStatusBarHeight() + (Platform.OS === "ios" ? 260 : 245),
+                    getStatusBarHeight() + (Platform.OS === "ios" ? 15 : -10),
+                  ],
                   extrapolate: "clamp",
                 }),
               }}
@@ -143,7 +150,7 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
             <S.HeaderTitle>{artistName}</S.HeaderTitle>
           </S.Header>
 
-          <S.Container style={{ paddingBottom: 135 }}>
+          <S.Container style={{ paddingBottom: getBottomSpace() + 144 }}>
             <S.Listeners>17.487.916 ouvintes mensais</S.Listeners>
 
             <S.Actions>
