@@ -106,6 +106,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Linear Gradient
 - Expo Google Fonts
 - React Navigation
+- Animações
 
 > Veja o arquivo [package.json](https://github.com/BrunoSaibert/spotify/blob/main/web/package.json)
 
