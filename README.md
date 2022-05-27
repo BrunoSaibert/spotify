@@ -36,7 +36,7 @@
   <a href="#--licença">Licença</a>
 </p>
 
-![](https://raw.githubusercontent.com/BrunoSaibert/spotify/main/assets/new-cover.jpg)
+![](https://raw.githubusercontent.com/BrunoSaibert/spotify/main/assets/cover.jpg)
 
 ## [](https://github.com/BrunoSaibert/spotify#--sobre-o-projeto) 💻 Sobre o projeto
 
@@ -52,8 +52,9 @@ Esse projeto tem por finalidade desenvolver do zero um app em React Native recri
   - [x] Biblioteca
   - [x] Player
   - [ ] Playlist
-  - [ ] Artista
+  - [x] Artista
 - [x] Recriar componente de player fixo
+- [ ] Tornar telas dinâmicas
 - [ ] Testes unitátios
 
 ---
