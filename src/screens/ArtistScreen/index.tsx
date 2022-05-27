@@ -7,12 +7,10 @@ import bandImage from "../../assets/images/bg-portugal-the-man.jpg";
 import PlayShuffleSvg from "../../assets/PlayShuffle.svg";
 
 import { ButtonIcon } from "../../components/ButtonIcon";
-import { LibraryItem } from "../../components/LibraryItem";
-import {
-  DATA_ARTISTAS,
-  DATA_PODCAST,
-  DATA_RECENTES,
-} from "../../utils/database";
+import { DiscographyItem } from "../../components/DiscographyItem";
+import { MostListenedItem } from "../../components/MostListenedItem";
+
+import { DATA_DISCOGRAPHY, DATA_MOST_LISTENED } from "../../utils/database";
 
 import * as S from "./styles";
 
@@ -189,17 +187,20 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
 
             <S.Section>
               <S.SectionTitle>Popular</S.SectionTitle>
-
-              {DATA_PODCAST.map((item, index) => (
-                <LibraryItem key={index} data={item} />
+              {DATA_MOST_LISTENED.map((item, index) => (
+                <MostListenedItem
+                  key={index}
+                  position={index + 1}
+                  data={item}
+                />
               ))}
             </S.Section>
 
             <S.Section>
               <S.SectionTitle>Lancamentos populares</S.SectionTitle>
 
-              {DATA_RECENTES.map((item, index) => (
-                <LibraryItem key={index} data={item} />
+              {DATA_DISCOGRAPHY.map((item, index) => (
+                <DiscographyItem key={index} data={item} />
               ))}
             </S.Section>
           </S.Container>

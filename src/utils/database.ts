@@ -133,3 +133,49 @@ export const DATA_PODCAST = [
     bgColor: "#fac264",
   },
 ];
+
+export const DATA_MOST_LISTENED = [
+  {
+    title: "Fill It Still",
+    amount: 492080486,
+    imageUrl: require("../assets/images/portugal_the_man_woodstock.jpg"),
+  },
+  {
+    title: "So Young",
+    amount: 47389243,
+    imageUrl: require("../assets/images/portugal_the_man_woodstock.jpg"),
+  },
+  {
+    title: "Modern Jesus",
+    amount: 43879290,
+    imageUrl: require("../assets/images/portugal_the_man.jpg"),
+  },
+  {
+    title: "Live in the Moment",
+    amount: 3749038,
+    imageUrl: require("../assets/images/portugal_the_man_woodstock.jpg"),
+  },
+  {
+    title: "Hip Hop Kids",
+    amount: 32329889,
+    imageUrl: require("../assets/images/portugal_the_man.jpg"),
+  },
+];
+
+export const DATA_DISCOGRAPHY = [
+  {
+    title: "Woodstock",
+    year: 2017,
+    imageUrl: require("../assets/images/portugal_the_man_woodstock.jpg"),
+  },
+  {
+    title: "Evil Friends",
+    year: 2013,
+    imageUrl: require("../assets/images/portugal_the_man.jpg"),
+  },
+  {
+    title: "In the Mountain in the Cloud",
+    year: 2011,
+    imageUrl: require("../assets/images/portugal_the_man_itmitc.jpg"),
+  },
+];

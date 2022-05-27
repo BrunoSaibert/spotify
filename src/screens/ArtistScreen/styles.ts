@@ -146,5 +146,5 @@ export const SectionTitle = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 `;
