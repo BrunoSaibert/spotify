@@ -29,9 +29,9 @@ export const Title = styled.Text`
   justify-content: center;
 
   padding: 8px;
-  font-size: ${RFValue(14)}px;
-  line-height: ${RFValue(14 * 1.2)}px;
+  font-size: ${RFValue(12)}px;
+  line-height: ${RFValue(12 * 1.2)}px;
   letter-spacing: -${RFValue(0.4)}px;
-  font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
+  font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_600};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;

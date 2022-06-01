@@ -1,6 +1,5 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { useTheme } from "styled-components";
 import { LinearGradient } from "expo-linear-gradient";
 import { getBottomSpace } from "react-native-iphone-x-helper";
 
@@ -8,9 +7,10 @@ import { ButtonIcon } from "../../components/ButtonIcon";
 import { RecentList } from "../../components/RecentList";
 import { Slider } from "../../components/Slider";
 import {
-  DATA_ARTISTAS,
+  DATA_FOR_ME,
   DATA_PODCAST,
-  DATA_RECENTES,
+  DATA_RECENTS,
+  DATA_THE_BEST_ARTIST,
 } from "../../utils/database";
 
 import * as S from "./styles";
@@ -19,8 +19,6 @@ import { NavigationScreenProps } from "../../navigation/types";
 
 export function HomeScreen(props: NavigationScreenProps<"HomeScreem">) {
   const { navigation } = props;
-
-  const theme = useTheme();
 
   function handleNavigation() {
     navigation.navigate("ArtistScreen");
@@ -45,7 +43,7 @@ export function HomeScreen(props: NavigationScreenProps<"HomeScreem">) {
       contentContainerStyle={{ paddingBottom: getBottomSpace() + 144 }}
     >
       <LinearGradient
-        colors={[theme.COLORS.PRIMARY, "transparent"]}
+        colors={[DATA_RECENTS[0].bgColor, "transparent"]}
         start={[0, 0]}
         end={[0.12, 0.6]}
       >
@@ -64,13 +62,17 @@ export function HomeScreen(props: NavigationScreenProps<"HomeScreem">) {
           </S.ButtonWrapper>
         </S.TitleWrapper>
 
-        <RecentList data={DATA_RECENTES} />
+        <RecentList data={DATA_RECENTS} />
       </LinearGradient>
 
       <Slider title="Seus programas" data={DATA_PODCAST} />
-      <Slider title="Tocadas recentemente" data={DATA_RECENTES} size="small" />
-      <Slider title="Principais artistas" data={DATA_ARTISTAS} />
-      <Slider title="100% você" data={DATA_RECENTES} />
+      <Slider title="Tocadas recentemente" data={DATA_RECENTS} size="small" />
+      <Slider
+        title="Com base no que você ouviu recentemente"
+        data={DATA_FOR_ME}
+      />
+      <Slider title="O melhor de cada artista" data={DATA_THE_BEST_ARTIST} />
+      <Slider title="100% você" data={DATA_RECENTS} />
     </ScrollView>
   );
 }

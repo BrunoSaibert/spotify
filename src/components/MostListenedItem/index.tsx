@@ -1,5 +1,6 @@
 import React from "react";
 import { ImageProps, View } from "react-native";
+import { formatCommaSeparator } from "../../utils/utils";
 
 import { ButtonIcon } from "../ButtonIcon";
 
@@ -13,17 +14,16 @@ export type MostListenedItemProps = {
 
 type Props = {
   position: number;
-  data: MostListenedItemProps;
-};
+} & MostListenedItemProps;
 
-export function MostListenedItem({ position, data }: Props) {
+export function MostListenedItem({ position, imageUrl, title, amount }: Props) {
   return (
     <S.Container>
       <S.Position>{position}</S.Position>
-      <S.Image source={data.imageUrl} />
+      <S.Image source={imageUrl} />
       <View style={{ flex: 1 }}>
-        <S.Title>{data.title}</S.Title>
-        <S.Amount>{data.amount}</S.Amount>
+        <S.Title numberOfLines={1}>{title}</S.Title>
+        <S.Amount>{formatCommaSeparator(amount)}</S.Amount>
       </View>
       <ButtonIcon
         name="dots-vertical"

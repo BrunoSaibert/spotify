@@ -7,8 +7,8 @@ import * as S from "./styles";
 export function RecentList({ data }: any) {
   return (
     <S.Container>
-      {data.map((item: RecentItemProps) => (
-        <RecentItem key={item.id} data={item} />
+      {data.slice(0, 6).map((item: RecentItemProps, index: number) => (
+        <RecentItem key={index} data={item} />
       ))}
     </S.Container>
   );

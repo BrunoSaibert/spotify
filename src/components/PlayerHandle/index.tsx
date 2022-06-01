@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from "react";
 import { Pressable, View, ImageProps } from "react-native";
 
-import image from "../../assets/images/portugal_the_man.jpg";
+import { DATA_ARTISTS } from "../../utils/database";
 import { ButtonIcon } from "../ButtonIcon";
 import { PlayerModal } from "../PlayerModal";
 
@@ -15,19 +15,29 @@ export type MusicDataProps = {
   title: string;
   artist: string;
   timer: string;
-  timerTotal: string;
+  timerTotal: Date;
   image: ImageProps;
+  bgColor: string;
 };
 
 export function PlayerHandle({ children }: PlayerHandleProps) {
   const [modalVisible, setModalVisible] = useState(false);
 
+  const artistPosition = 9;
+  const artistAlbum = 0;
+  const artistAlbumTrack = 0;
+
   const data = {
-    title: "Hip Hop Kids",
-    artist: "Portugal. The Man",
+    artist: DATA_ARTISTS[artistPosition].title,
+    title:
+      DATA_ARTISTS[artistPosition].albuns[artistAlbum].tracks[artistAlbumTrack]
+        .title,
+    timerTotal:
+      DATA_ARTISTS[artistPosition].albuns[artistAlbum].tracks[artistAlbumTrack]
+        .duration,
     timer: "0:49",
-    timerTotal: "3:27",
-    image,
+    image: DATA_ARTISTS[artistPosition].albuns[artistAlbum].imageUrl,
+    bgColor: DATA_ARTISTS[artistPosition].albuns[artistAlbum].bgColor,
   };
 
   return (

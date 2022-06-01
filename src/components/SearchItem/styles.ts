@@ -23,8 +23,8 @@ export const Button = styled(TouchableOpacity)<{ bgColor: string }>`
 export const Title = styled.Text`
   max-width: 60%;
   z-index: 99;
-  font-size: ${RFValue(16)}px;
-  line-height: ${RFValue(16 * 1.2)}px;
+  font-size: ${RFValue(14)}px;
+  line-height: ${RFValue(14 * 1.2)}px;
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 `;

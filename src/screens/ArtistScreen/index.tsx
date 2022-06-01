@@ -6,15 +6,17 @@ import {
   getBottomSpace,
   getStatusBarHeight,
 } from "react-native-iphone-x-helper";
+import { LinearGradient } from "expo-linear-gradient";
 
-import bandImage from "../../assets/images/bg-portugal-the-man.jpg";
 import PlayShuffleSvg from "../../assets/PlayShuffle.svg";
 
 import { ButtonIcon } from "../../components/ButtonIcon";
 import { DiscographyItem } from "../../components/DiscographyItem";
 import { MostListenedItem } from "../../components/MostListenedItem";
+import { Slider } from "../../components/Slider";
 
-import { DATA_DISCOGRAPHY, DATA_MOST_LISTENED } from "../../utils/database";
+import { DATA_ARTISTS } from "../../utils/database";
+import { formatCommaSeparator } from "../../utils/utils";
 
 import * as S from "./styles";
 
@@ -26,16 +28,28 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
   const [scrollY, _] = useState(new Animated.Value(0));
   const theme = useTheme();
 
-  const artistName = "Portugal. The Man";
-
   function handleNavigation() {
     navigation.goBack();
   }
 
+  const artistPosition = 9;
+
+  const data = {
+    title: DATA_ARTISTS[artistPosition].title,
+    bgColor: DATA_ARTISTS[artistPosition].bgColor,
+    description: DATA_ARTISTS[artistPosition].description,
+    image: DATA_ARTISTS[artistPosition].imageUrl,
+    discography: DATA_ARTISTS[artistPosition].albuns,
+    mostListened: DATA_ARTISTS[artistPosition].mostListened,
+    monthlyListeners: DATA_ARTISTS[artistPosition].monthlyListeners,
+    likedSongs: DATA_ARTISTS[artistPosition].likedSongs,
+    appearsIn: DATA_ARTISTS[artistPosition].appearsIn,
+  };
+
   return (
     <>
       <S.Wrapper
-        colors={["#444", theme.COLORS.DARKER]}
+        colors={[data.bgColor, theme.COLORS.DARKER]}
         start={[0, 0]}
         end={[0, 1]}
       >
@@ -46,7 +60,7 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
 
             backgroundColor: scrollY.interpolate({
               inputRange: [0, 120, 150],
-              outputRange: ["transparent", "transparent", "#5C6061"],
+              outputRange: ["transparent", "transparent", data.bgColor],
               extrapolate: "clamp",
             }),
 
@@ -98,7 +112,7 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
                   }),
                 }}
               >
-                <S.AnimatedHeaderTitle>{artistName}</S.AnimatedHeaderTitle>
+                <S.AnimatedHeaderTitle>{data.title}</S.AnimatedHeaderTitle>
               </Animated.Text>
             </View>
 
@@ -108,7 +122,7 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
                   inputRange: [0, 265],
                   outputRange: [
                     getStatusBarHeight() + (Platform.OS === "ios" ? 260 : 245),
-                    getStatusBarHeight() + (Platform.OS === "ios" ? 15 : -10),
+                    getStatusBarHeight() + (Platform.OS === "ios" ? 15 : 0),
                   ],
                   extrapolate: "clamp",
                 }),
@@ -128,7 +142,12 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
             }),
           }}
         >
-          <S.ImageBackground source={bandImage} />
+          <S.ImageBackground
+            source={data.image}
+            imageStyle={{
+              resizeMode: "cover",
+            }}
+          />
         </Animated.View>
 
         <S.ScrollContainer
@@ -147,11 +166,13 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
           showsVerticalScrollIndicator={false}
         >
           <S.Header>
-            <S.HeaderTitle>{artistName}</S.HeaderTitle>
+            <S.HeaderTitle>{data.title}</S.HeaderTitle>
           </S.Header>
 
           <S.Container style={{ paddingBottom: getBottomSpace() + 144 }}>
-            <S.Listeners>17.487.916 ouvintes mensais</S.Listeners>
+            <S.Listeners>
+              {formatCommaSeparator(data.monthlyListeners)} ouvintes mensais
+            </S.Listeners>
 
             <S.Actions>
               <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -163,42 +184,52 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
               </View>
             </S.Actions>
 
-            <S.LikedSongs>
-              <View style={{ position: "relative" }}>
-                <S.LikedSongsImage source={bandImage} />
-                <View
-                  style={{
-                    width: 22,
-                    height: 22,
-                    borderRadius: 22,
-                    position: "absolute",
-                    bottom: -4,
-                    right: 8,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backgroundColor: `${theme.COLORS.PRIMARY}`,
-                    borderWidth: 2,
-                    borderColor: `${theme.COLORS.DARKER}`,
-                  }}
-                >
-                  <MaterialCommunityIcons name="heart" color="white" />
+            {data.likedSongs > 0 && (
+              <S.LikedSongs>
+                <View style={{ position: "relative" }}>
+                  <S.LikedSongsImage source={data.image} />
+                  <View
+                    style={{
+                      width: 22,
+                      height: 22,
+                      borderRadius: 22,
+                      position: "absolute",
+                      bottom: -4,
+                      right: 8,
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: `${theme.COLORS.PRIMARY}`,
+                      borderWidth: 2,
+                      borderColor: `${theme.COLORS.DARKER}`,
+                    }}
+                  >
+                    <MaterialCommunityIcons name="heart" color="white" />
+                  </View>
                 </View>
-              </View>
-              <View>
-                <S.LikedSongsTitle>Músicas Curtidas</S.LikedSongsTitle>
-                <S.LikedSongsArtist>
-                  10 músicas de {artistName}
-                </S.LikedSongsArtist>
-              </View>
-            </S.LikedSongs>
+                <View>
+                  <S.LikedSongsTitle>Músicas Curtidas</S.LikedSongsTitle>
+                  <S.LikedSongsArtist>
+                    {data.likedSongs} músicas de {data.title}
+                  </S.LikedSongsArtist>
+                </View>
+              </S.LikedSongs>
+            )}
 
             <S.Section>
               <S.SectionTitle>Popular</S.SectionTitle>
-              {DATA_MOST_LISTENED.map((item, index) => (
+              {data.mostListened.map((item, index) => (
                 <MostListenedItem
                   key={index}
                   position={index + 1}
-                  data={item}
+                  imageUrl={
+                    DATA_ARTISTS[artistPosition].albuns[item.album].imageUrl
+                  }
+                  title={
+                    DATA_ARTISTS[artistPosition].albuns[item.album].tracks[
+                      item.track
+                    ].title
+                  }
+                  amount={item.amount}
                 />
               ))}
             </S.Section>
@@ -206,9 +237,38 @@ export function ArtistScreen(props: NavigationScreenProps<"ArtistScreen">) {
             <S.Section>
               <S.SectionTitle>Lancamentos populares</S.SectionTitle>
 
-              {DATA_DISCOGRAPHY.map((item, index) => (
+              {data.discography.map((item, index) => (
                 <DiscographyItem key={index} data={item} />
               ))}
+            </S.Section>
+
+            <Slider
+              title={`Com ${data.title}`}
+              data={data.appearsIn}
+              style={{ marginLeft: -16 }}
+            />
+
+            <S.Section>
+              <S.SectionTitle>Sobre</S.SectionTitle>
+
+              <S.AboutImageBackground
+                source={data.image}
+                imageStyle={{
+                  resizeMode: "cover",
+                  borderRadius: 4,
+                }}
+              >
+                <LinearGradient
+                  colors={["transparent", theme.COLORS.DARK]}
+                  start={[0, 0]}
+                  end={[0, 1]}
+                  style={{ flex: 1, justifyContent: "flex-end" }}
+                >
+                  <S.AboutDescription numberOfLines={3}>
+                    {data.description}
+                  </S.AboutDescription>
+                </LinearGradient>
+              </S.AboutImageBackground>
             </S.Section>
           </S.Container>
         </S.ScrollContainer>

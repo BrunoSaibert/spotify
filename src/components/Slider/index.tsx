@@ -11,9 +11,9 @@ export type SliderProps = {
   data: SliderItemProps[];
 };
 
-export function Slider({ title, size = "large", data }: SliderProps) {
+export function Slider({ title, size = "large", data, ...props }: SliderProps) {
   return (
-    <S.Container>
+    <S.Container {...props}>
       <S.Title>{title}</S.Title>
 
       <S.Slider
@@ -21,7 +21,7 @@ export function Slider({ title, size = "large", data }: SliderProps) {
         renderItem={({ item }: any) => <SliderItem data={item} size={size} />}
         contentContainerStyle={{ paddingRight: 32 }}
         ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
-        keyExtractor={({ id }: any) => `${id}`}
+        keyExtractor={(_, index: any) => `${index}`}
         showsHorizontalScrollIndicator={false}
         horizontal={true}
       />

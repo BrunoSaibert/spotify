@@ -62,11 +62,13 @@ export function SliderItem({ data, size }: Props) {
       )}
 
       {size !== "small" && !!data.description && (
-        <S.Description align={textAlign}>{data.description}</S.Description>
+        <S.Description align={textAlign} numberOfLines={2}>
+          {data.description}
+        </S.Description>
       )}
 
       {size !== "small" && !!data.author && (
-        <S.Description align={textAlign}>
+        <S.Description align={textAlign} numberOfLines={2}>
           {data.type === "podcast" && "Show · "}
           {data.author}
         </S.Description>

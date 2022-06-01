@@ -35,8 +35,8 @@ export const AnimatedHeaderTitle = styled.Text`
 
 export const ImageBackground = styled.ImageBackground`
   width: 100%;
-  height: 280px;
-  opacity: 0.6;
+  height: 400px;
+  opacity: 0.9;
 
   position: absolute;
   top: 0;
@@ -50,7 +50,7 @@ export const ScrollContainer = styled.ScrollView`
 export const Header = styled.View`
   justify-content: flex-end;
   width: 100%;
-  height: 280px;
+  height: 300px;
 `;
 
 export const HeaderTitle = styled.Text`
@@ -148,5 +148,21 @@ export const SectionTitle = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_700};
   color: ${({ theme }) => theme.COLORS.LIGHTER};
 
+  margin-bottom: 8px;
+`;
+
+export const AboutImageBackground = styled.ImageBackground`
+  width: 100%;
+  height: 400px;
+`;
+
+export const AboutDescription = styled.Text`
+  font-size: ${RFValue(14)}px;
+  line-height: ${RFValue(14 * 1.6)}px;
+  letter-spacing: -${RFValue(0.6)}px;
+  font-family: ${({ theme }) => theme.FONTS.OPEN_SANS_600};
+  color: ${({ theme }) => theme.COLORS.LIGHTER};
+
+  padding: 16px;
   margin-bottom: 8px;
 `;

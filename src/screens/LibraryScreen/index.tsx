@@ -2,14 +2,12 @@ import React from "react";
 import { View } from "react-native";
 import { getBottomSpace } from "react-native-iphone-x-helper";
 
-import perfilImage from "../../assets/images/profile.jpg";
+import perfilImage from "../../assets/images/Profile.jpg";
+
 import { LibraryItem } from "../../components/LibraryItem";
 import { ButtonIcon } from "../../components/ButtonIcon";
-import {
-  DATA_ARTISTAS,
-  DATA_PODCAST,
-  DATA_RECENTES,
-} from "../../utils/database";
+
+import { DATA_ARTISTS, DATA_PODCAST, DATA_RECENTS } from "../../utils/database";
 
 import * as S from "./styles";
 
@@ -93,7 +91,7 @@ export function LibraryScreen() {
           />
         </View>
 
-        {[...DATA_RECENTES, ...DATA_PODCAST, ...DATA_ARTISTAS].map(
+        {[...DATA_RECENTS, ...DATA_PODCAST, ...DATA_ARTISTS].map(
           (item, index) => (
             <LibraryItem key={index} data={item} />
           )

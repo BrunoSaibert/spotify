@@ -26,10 +26,19 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
 
   const windowHeight = Dimensions.get("window").height;
 
+  const durationHours = data.timerTotal.getHours()
+    ? data.timerTotal.getHours() + ":"
+    : "";
+  const durationMinutes =
+    String(data.timerTotal.getMinutes()).padStart(2, "0") + ":";
+  const durationSeconds = String(data.timerTotal.getSeconds()).padStart(2, "0");
+
+  const duration = durationHours + durationMinutes + durationSeconds;
+
   return (
     <Modal animationType="slide" visible={visible} statusBarTranslucent>
       <LinearGradient
-        colors={["#646464", theme.COLORS.DARKER]}
+        colors={[data.bgColor ?? "#646464", theme.COLORS.DARKER]}
         start={[0, 0]}
         end={[0, 1]}
         style={{
@@ -92,7 +101,7 @@ export function PlayerModal({ data, visible, handleClose }: PlayerModalProps) {
 
           <S.CenteredRow>
             <S.MusicTime>{data.timer}</S.MusicTime>
-            <S.MusicTime>{data.timerTotal}</S.MusicTime>
+            <S.MusicTime>{duration}</S.MusicTime>
           </S.CenteredRow>
 
           <S.CenteredRow>
