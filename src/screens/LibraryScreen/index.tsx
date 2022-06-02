@@ -1,5 +1,5 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useState } from "react";
+import { Animated, View } from "react-native";
 import { getBottomSpace } from "react-native-iphone-x-helper";
 
 import perfilImage from "../../assets/images/Profile.jpg";
@@ -12,12 +12,25 @@ import { DATA_ARTISTS, DATA_PODCAST, DATA_RECENTS } from "../../utils/database";
 import * as S from "./styles";
 
 export function LibraryScreen() {
+  const [scrollY, _] = useState(new Animated.Value(0));
+
   return (
     <S.Container
       bounces={false}
       stickyHeaderIndices={[0]}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingBottom: getBottomSpace() + 144 }}
+      scrollEventThrottle={16}
+      onScroll={Animated.event(
+        [
+          {
+            nativeEvent: {
+              contentOffset: { y: scrollY },
+            },
+          },
+        ],
+        { useNativeDriver: false }
+      )}
     >
       <S.Header
         style={{
@@ -32,8 +45,9 @@ export function LibraryScreen() {
           </View>
 
           <S.ButtonWrapper>
-            <ButtonIcon name="magnify" color="LIGHTER" />
+            <ButtonIcon size={32} name="magnify" color="LIGHTER" />
             <ButtonIcon
+              size={32}
               name="plus"
               color="LIGHTER"
               style={{ marginRight: -12 }}
@@ -41,30 +55,45 @@ export function LibraryScreen() {
           </S.ButtonWrapper>
         </S.TitleWrapper>
 
-        <S.FilterButtonWrapper
-          horizontal
-          showsHorizontalScrollIndicator={false}
+        <Animated.View
+          style={{
+            opacity: scrollY.interpolate({
+              inputRange: [0, 12],
+              outputRange: [1, 0],
+              extrapolate: "clamp",
+            }),
+            marginTop: scrollY.interpolate({
+              inputRange: [0, 24],
+              outputRange: [0, -40],
+              extrapolate: "clamp",
+            }),
+          }}
         >
-          <S.FilterButton activeOpacity={0.7} style={{ marginLeft: 16 }}>
-            <S.FilterButtonText>Playlist</S.FilterButtonText>
-          </S.FilterButton>
+          <S.FilterButtonWrapper
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          >
+            <S.FilterButton activeOpacity={0.7} style={{ marginLeft: 16 }}>
+              <S.FilterButtonText>Playlist</S.FilterButtonText>
+            </S.FilterButton>
 
-          <S.FilterButton activeOpacity={0.7}>
-            <S.FilterButtonText>Artitas</S.FilterButtonText>
-          </S.FilterButton>
+            <S.FilterButton activeOpacity={0.7}>
+              <S.FilterButtonText>Artitas</S.FilterButtonText>
+            </S.FilterButton>
 
-          <S.FilterButton activeOpacity={0.7}>
-            <S.FilterButtonText>Álbuns</S.FilterButtonText>
-          </S.FilterButton>
+            <S.FilterButton activeOpacity={0.7}>
+              <S.FilterButtonText>Álbuns</S.FilterButtonText>
+            </S.FilterButton>
 
-          <S.FilterButton activeOpacity={0.7}>
-            <S.FilterButtonText>Podcasts e programas</S.FilterButtonText>
-          </S.FilterButton>
+            <S.FilterButton activeOpacity={0.7}>
+              <S.FilterButtonText>Podcasts e programas</S.FilterButtonText>
+            </S.FilterButton>
 
-          <S.FilterButton activeOpacity={0.7} style={{ marginRight: 16 }}>
-            <S.FilterButtonText>Baixado</S.FilterButtonText>
-          </S.FilterButton>
-        </S.FilterButtonWrapper>
+            <S.FilterButton activeOpacity={0.7} style={{ marginRight: 16 }}>
+              <S.FilterButtonText>Baixado</S.FilterButtonText>
+            </S.FilterButton>
+          </S.FilterButtonWrapper>
+        </Animated.View>
       </S.Header>
 
       <S.Content>
