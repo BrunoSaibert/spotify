@@ -2273,3 +2273,38 @@ export const DATA_PODCAST = [
     bgColor: "#b3b3b3",
   },
 ];
+
+export const DATA_PLAYLISTS = [
+  {
+    type: "playlist",
+    title: "On Fire",
+    description: "Big rock tracks from 2000. Cover: Linkin Park.",
+    likes: 48392849,
+    imageUrl: require("../assets/images/PlayListOnFire.jpg"),
+    author: {
+      name: "Bruno Saibert",
+      imageUrl: require("../assets/images/Profile.jpg"),
+    },
+    bgColor: "#fc946c",
+    setlist: [
+      { artist: 0, album: 0, track: 0 },
+      { artist: 1, album: 0, track: 0 },
+      { artist: 2, album: 0, track: 0 },
+      { artist: 3, album: 0, track: 0 },
+      { artist: 5, album: 0, track: 0 },
+      { artist: 6, album: 0, track: 0 },
+      { artist: 7, album: 0, track: 0 },
+      { artist: 8, album: 0, track: 0 },
+      { artist: 9, album: 0, track: 0 },
+      { artist: 0, album: 0, track: 0 },
+      { artist: 1, album: 0, track: 0 },
+      { artist: 2, album: 0, track: 0 },
+      { artist: 3, album: 0, track: 0 },
+      { artist: 5, album: 0, track: 0 },
+      { artist: 6, album: 0, track: 0 },
+      { artist: 7, album: 0, track: 0 },
+      { artist: 8, album: 0, track: 0 },
+      { artist: 9, album: 0, track: 0 },
+    ],
+  },
+];

@@ -1,5 +1,6 @@
 import React from "react";
 import { ImageProps } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import * as S from "./styles";
 
@@ -14,9 +15,15 @@ type Props = {
 };
 
 export function RecentItem({ data }: Props) {
+  const { navigate } = useNavigation();
+
+  function handleNavigation() {
+    navigate("PlaylistScreen");
+  }
+
   return (
     <S.Container>
-      <S.Button activeOpacity={0.7}>
+      <S.Button activeOpacity={0.7} onPress={handleNavigation}>
         <S.Image
           source={data.imageUrl}
           style={{

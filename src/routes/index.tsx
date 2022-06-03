@@ -9,42 +9,60 @@ import { HomeScreen } from "../screens/HomeScreen";
 import { SearchScreen } from "../screens/SearchScreen";
 import { LibraryScreen } from "../screens/LibraryScreen";
 import { ArtistScreen } from "../screens/ArtistScreen";
+import { PlaylistScreen } from "../screens/PlaylistScreen";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+
+function createCommon(Stack: any) {
+  return (
+    <>
+      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
+      <Stack.Screen name="PlaylistScreen" component={PlaylistScreen} />
+    </>
+  );
+}
 
 function StackHomeNavigator() {
+  const Stack = createStackNavigator();
+  const common = createCommon(Stack);
+
   return (
     <Stack.Navigator
       initialRouteName="HomeScreen"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
+      {common}
     </Stack.Navigator>
   );
 }
 
 function StackSearchNavigator() {
+  const Stack = createStackNavigator();
+  const common = createCommon(Stack);
+
   return (
     <Stack.Navigator
       initialRouteName="SearchScreen"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="SearchScreen" component={SearchScreen} />
-      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
+      {common}
     </Stack.Navigator>
   );
 }
 
 function StackLibraryNavigator() {
+  const Stack = createStackNavigator();
+  const common = createCommon(Stack);
+
   return (
     <Stack.Navigator
       initialRouteName="LibraryScreen"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
-      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
+      {common}
     </Stack.Navigator>
   );
 }
