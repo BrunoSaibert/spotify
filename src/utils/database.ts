@@ -2221,35 +2221,201 @@ export const DATA_PODCAST = [
     title: "Não Inviabilize",
     author: "Déia Freitas",
     imageUrl: require("../assets/images/NaoInviabilizeCover.jpg"),
-    bgColor: "#fba315",
+    bgColor: "#fcdc25",
+    description: "",
+    categories: ["Histórias"],
+    stars: 4.9,
+    starsAmount: 970,
+    episodes: [
+      {
+        title: "BRICOLAGEM",
+        description:
+          "Picolé De Limão é um quadro do canal Não Inviabilize. Aqui você ouve as suas histórias mituradas às minhas!",
+        imageUrl: require("../assets/images/PicoleDeLimao.jpg"),
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: true,
+      },
+      {
+        title: "BEIJO",
+        description:
+          "Amor Nas Redes é um quadro do canal Não Inviabilize. Aqui você ouve as suas histórias mituradas às minhas!",
+        imageUrl: require("../assets/images/AmorNasRedes.jpg"),
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: false,
+      },
+      {
+        title: "PÉROLA",
+        description:
+          "Patada é um quadro do canal Não Inviabilize. Aqui você ouve as suas histórias mituradas às minhas!",
+        imageUrl: require("../assets/images/Patada.jpg"),
+        date: new Date(2021, 10, 19),
+        listened: false,
+        downloaded: true,
+      },
+      {
+        title: "OBRA",
+        description:
+          "Mico Meu é um quadro do canal Não Inviabilize. Aqui você ouve as suas histórias mituradas às minhas!",
+        imageUrl: require("../assets/images/MicoMeu.jpg"),
+        date: new Date(2021, 10, 19),
+        listened: false,
+        downloaded: false,
+      },
+      {
+        title: "CHICLETINHO",
+        description:
+          "Pimenta No Dos Outros é um quadro do canal Não Inviabilize. Aqui você ouve as suas histórias mituradas às minhas!",
+        imageUrl: require("../assets/images/PimentaNoDosOutros.jpg"),
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: false,
+      },
+    ],
   },
   {
     type: "podcast",
     title: "Hodor Cavalo",
     author: "Hodor Cavalo",
     imageUrl: require("../assets/images/HodorCavaloCover.jpg"),
-    bgColor: "#1C7C54",
+    bgColor: "#3cd06f",
+    description:
+      "Vamos ler e reler As Crônicas de Gelo e Fogo? No Hodor Cavalo, Míriam Castro (Mikann), Carol Moreira e Fábia Gassi comentam cada capitulo dessa serie incrível.",
+    categories: ["TV", "Livros"],
+    stars: 4.9,
+    starsAmount: 970,
+    episodes: [
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: true,
+      },
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: false,
+      },
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: false,
+      },
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: false,
+      },
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: true,
+      },
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: false,
+      },
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: true,
+      },
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: false,
+      },
+      {
+        title: "#112: Uma boa carpideira | Catelyn III, A Fúria dos Reis",
+        description:
+          "Catelyn tenta resolver o conflito entre Stannis Baratheon e Renly Baratheon. Em Catleyn III, ela descobre que Joffrey e...",
+        date: new Date(2021, 10, 19),
+        listened: true,
+        downloaded: false,
+      },
+    ],
   },
   {
     type: "podcast",
     title: "Popload: Podcast",
     author: "Popload",
     imageUrl: require("../assets/images/PoploadPopcastCover.jpg"),
-    bgColor: "#cec98f",
+    bgColor: "#a49462",
+    description: "",
+    categories: ["TV", "Livros"],
+    stars: 4.9,
+    starsAmount: 970,
+    episodes: [
+      {
+        title: "",
+        description: "",
+        date: new Date(2022, 0, 1),
+        listened: true,
+      },
+    ],
   },
   {
     type: "podcast",
     title: "Café da manhã",
     author: "Spotify Studios",
     imageUrl: require("../assets/images/CafeDaManhaCover.jpg"),
-    bgColor: "#c6af3c",
+    bgColor: "#D7BC27",
+    description: "",
+    categories: ["TV", "Livros"],
+    stars: 4.9,
+    starsAmount: 970,
+    episodes: [
+      {
+        title: "",
+        description: "",
+        date: new Date(2022, 0, 1),
+        listened: true,
+      },
+    ],
   },
   {
     type: "podcast",
-    title: "His Dark Materials (Fronteidas do Universo)",
+    title: "His Dark Materials (Fronteidas Do Universo): O Podcast",
     author: "HBO Brasil",
     imageUrl: require("../assets/images/HisDarkMaterialsCover.jpg"),
-    bgColor: "#4c615e",
+    bgColor: "#574740",
+    description: "",
+    categories: ["TV", "Livros"],
+    stars: 4.9,
+    starsAmount: 970,
+    episodes: [
+      {
+        title: "",
+        description: "",
+        date: new Date(2022, 0, 1),
+        listened: true,
+      },
+    ],
   },
   {
     type: "podcast",
@@ -2257,6 +2423,18 @@ export const DATA_PODCAST = [
     author: "Rocketseat",
     imageUrl: require("../assets/images/FalaDevCover.jpg"),
     bgColor: "#7160ae",
+    description: "",
+    categories: ["TV", "Livros"],
+    stars: 4.9,
+    starsAmount: 970,
+    episodes: [
+      {
+        title: "",
+        description: "",
+        date: new Date(2022, 0, 1),
+        listened: true,
+      },
+    ],
   },
   {
     type: "podcast",
@@ -2264,6 +2442,18 @@ export const DATA_PODCAST = [
     author: "Alura",
     imageUrl: require("../assets/images/HipstersPontoTechCover.jpg"),
     bgColor: "#fac264",
+    description: "",
+    categories: ["TV", "Livros"],
+    stars: 4.9,
+    starsAmount: 970,
+    episodes: [
+      {
+        title: "",
+        description: "",
+        date: new Date(2022, 0, 1),
+        listened: true,
+      },
+    ],
   },
   {
     type: "podcast",
@@ -2271,6 +2461,18 @@ export const DATA_PODCAST = [
     author: "Devs Cansados",
     imageUrl: require("../assets/images/DevsCansadosCover.jpg"),
     bgColor: "#b3b3b3",
+    description: "",
+    categories: ["TV", "Livros"],
+    stars: 4.9,
+    starsAmount: 970,
+    episodes: [
+      {
+        title: "",
+        description: "",
+        date: new Date(2022, 0, 1),
+        listened: true,
+      },
+    ],
   },
 ];
 
