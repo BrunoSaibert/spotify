@@ -53,7 +53,7 @@ Esse projeto tem por finalidade desenvolver do zero um app em React Native recri
   - [x] Player
   - [x] Artista
   - [x] Playlist
-  - [ ] Podcast
+  - [x] Podcast
 - [x] Recriar componente de player fixo
 - [x] Tornar telas dinâmicas
 - [x] Criar base de dados simples com json
