@@ -2,7 +2,6 @@ import "react-native-gesture-handler";
 import { useCallback, useEffect, useState } from "react";
 import { View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "styled-components";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
@@ -15,7 +14,6 @@ import {
 import theme from "./src/styles/theme";
 
 import { Routes } from "./src/routes";
-import { PlayerHandle } from "./src/components/PlayerHandle";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -60,17 +58,7 @@ export default function App() {
         }}
         onLayout={onLayoutRootView}
       >
-        <NavigationContainer
-          theme={{
-            colors: {
-              background: theme.COLORS.DARKER,
-            },
-          }}
-        >
-          <PlayerHandle>
-            <Routes />
-          </PlayerHandle>
-        </NavigationContainer>
+        <Routes />
       </View>
     </ThemeProvider>
   );
