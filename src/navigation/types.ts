@@ -6,6 +6,7 @@ type NavigationParamList = {
   LibraryScreen: undefined;
   ArtistScreen: undefined;
   PlaylistScreen: undefined;
+  PodcastScreen: undefined;
 };
 
 export type NavigationScreenProps<T extends keyof NavigationParamList> =

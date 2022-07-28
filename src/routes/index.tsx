@@ -10,6 +10,7 @@ import { SearchScreen } from "../screens/SearchScreen";
 import { LibraryScreen } from "../screens/LibraryScreen";
 import { ArtistScreen } from "../screens/ArtistScreen";
 import { PlaylistScreen } from "../screens/PlaylistScreen";
+import { PodcastScreen } from "../screens/PodcastScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +19,7 @@ function createCommon(Stack: any) {
     <>
       <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
       <Stack.Screen name="PlaylistScreen" component={PlaylistScreen} />
+      <Stack.Screen name="PodcastScreen" component={PodcastScreen} />
     </>
   );
 }
